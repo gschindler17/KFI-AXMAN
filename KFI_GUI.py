@@ -1,6 +1,6 @@
 import sys
 from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QVBoxLayout, QLineEdit
 
 class MyApp(QMainWindow):
     def __init__(self):
@@ -34,6 +34,8 @@ class MyApp(QMainWindow):
         self.pushButton_24.clicked.connect(self.on_button_click24)
 
     def on_button_click1(self):
+        # if (self.pushButton_13):
+            # self.pushButton_13.setStyleSheet(("background-color: rgb(255, 0, 0); color: red;"))
         print("Button clicked!")  # Action when button is clicked
         
     def on_button_click2(self):
