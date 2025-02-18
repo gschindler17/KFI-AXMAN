@@ -9,7 +9,7 @@ class MyApp(QMainWindow):
         uic.loadUi("FrontEnd.ui", self)  # Load the UI file
 
         # Access the button by its object name from Qt Designer
-        self.pushButton.clicked.connect(self.on_button_click1)
+        self.pushButton_1.clicked.connect(lambda: self.controller.handle_button_click(1))
         self.pushButton_2.clicked.connect(self.on_button_click2)
         self.pushButton_3.clicked.connect(self.on_button_click3)
         self.pushButton_4.clicked.connect(self.on_button_click4)
@@ -34,10 +34,15 @@ class MyApp(QMainWindow):
         self.pushButton_23.clicked.connect(self.on_button_click23)
         self.pushButton_24.clicked.connect(self.on_button_click24)
 
+    def set_controller(self, controller):
+        # Sets the controller instance after GUI initialization.
+        print("KFI_GUI: Controller set.")
+        self.controller = controller
+    
+    
     def on_button_click1(self):
-        # if (self.pushButton_13):
-            # self.pushButton_13.setStyleSheet(("background-color: rgb(255, 0, 0); color: red;"))
-        print("Button clicked!")  # Action when button is clicked
+        self.controller.handle_button_click(1)
+        print("\nButton 1 clicked!")  # Action when button is clicked
         
     def on_button_click2(self):
         print("Button clicked!")  # Action when button is clicked    
