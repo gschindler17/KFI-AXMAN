@@ -9,8 +9,8 @@ class MyApp(QMainWindow):
         uic.loadUi("FrontEnd.ui", self)  # Load the UI file
 
         # Access the button by its object name from Qt Designer
-        self.pushButton.clicked.connect(self.on_button_click1)
-        self.pushButton_2.clicked.connect(self.on_button_click2)
+        self.pushButton.clicked.connect(Controller.on_button_click1)
+        self.pushButton_2.clicked.connect(Controller.on_button_click2)
         self.pushButton_3.clicked.connect(self.on_button_click3)
         self.pushButton_4.clicked.connect(self.on_button_click4)
         self.pushButton_5.clicked.connect(self.on_button_click5)
