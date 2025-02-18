@@ -11,17 +11,17 @@ class MyApp(QMainWindow):
         # Access the button by its object name from Qt Designer
 
         self.pushButton_1.clicked.connect(lambda: self.controller.handle_button_click(1))
-        self.pushButton_2.clicked.connect(self.on_button_click2)
-        self.pushButton_3.clicked.connect(self.on_button_click3)
-        self.pushButton_4.clicked.connect(self.on_button_click4)
-        self.pushButton_5.clicked.connect(self.on_button_click5)
-        self.pushButton_6.clicked.connect(self.on_button_click6)
-        self.pushButton_7.clicked.connect(self.on_button_click7)
-        self.pushButton_8.clicked.connect(self.on_button_click8)
-        self.pushButton_9.clicked.connect(self.on_button_click9)
-        self.pushButton_10.clicked.connect(self.on_button_click10)
-        self.pushButton_11.clicked.connect(self.on_button_click11)
-        self.pushButton_12.clicked.connect(self.on_button_click12)
+        self.pushButton_2.clicked.connect(lambda: self.controller.handle_button_click(2))
+        self.pushButton_3.clicked.connect(lambda: self.controller.handle_button_click(3))
+        self.pushButton_4.clicked.connect(lambda: self.controller.handle_button_click(4))
+        self.pushButton_5.clicked.connect(lambda: self.controller.handle_button_click(5))
+        self.pushButton_6.clicked.connect(lambda: self.controller.handle_button_click(6))
+        self.pushButton_7.clicked.connect(lambda: self.controller.handle_button_click(7))
+        self.pushButton_8.clicked.connect(lambda: self.controller.handle_button_click(8))
+        self.pushButton_9.clicked.connect(lambda: self.controller.handle_button_click(9))
+        self.pushButton_10.clicked.connect(lambda: self.controller.handle_button_click(10))
+        self.pushButton_11.clicked.connect(lambda: self.controller.handle_button_click(11))
+        self.pushButton_12.clicked.connect(lambda: self.controller.handle_button_click(12))
         self.pushButton_13.clicked.connect(self.on_button_click13)
         self.pushButton_14.clicked.connect(self.on_button_click14)
         self.pushButton_15.clicked.connect(self.on_button_click15)
@@ -46,84 +46,107 @@ class MyApp(QMainWindow):
         print("\nButton 1 clicked!")  # Action when button is clicked
         
     def on_button_click2(self):
-        print("Button clicked!")  # Action when button is clicked    
+        # print("Button clicked!")  # Action when button is clicked 
+        pass   
     
     def on_button_click3(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click4(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass
+        # print("Button clicked!")  # Action when button is clicked
     
     def on_button_click5(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass
+        # print("Button clicked!")  # Action when button is clicked
     
     def on_button_click6(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click7(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass
+        # print("Button clicked!")  # Action when button is clicked
 
     def on_button_click8(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass
+        # print("Button clicked!")  # Action when button is clicked
 
     def on_button_click9(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click10(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click11(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass 
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click12(self):
-        print("Button clicked!")  # Action when button is clicked
+        pass
+        # print("Button clicked!")  # Action when button is clicked
 
     def on_button_click13(self):
+        pass
         text = self.lineEdit.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
     
     def on_button_click14(self):
+        pass
         text = self.lineEdit_2.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
     
     def on_button_click15(self):
+        pass
         text = self.lineEdit_3.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
     
     def on_button_click16(self):
+        pass
         text = self.lineEdit_4.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click17(self):
+        pass
         text = self.lineEdit_5.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click18(self):
+        pass
         text = self.lineEdit_6.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click19(self):
+        pass
         text = self.lineEdit_7.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click20(self):
+        pass
         text = self.lineEdit_8.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click21(self):
+        pass
         text = self.lineEdit_9.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
         
     def on_button_click22(self):
+        pass
         text = self.lineEdit_10.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
     
     def on_button_click23(self):
+        pass
         text = self.lineEdit_11.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
 
     def on_button_click24(self):
+        pass
         text = self.lineEdit_12.text()
-        print("Button clicked!")  # Action when button is clicked
+        # print("Button clicked!")  # Action when button is clicked
 
 

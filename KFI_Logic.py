@@ -3,6 +3,7 @@ class KFILogic:
         print("Logic Initialized")
 
     def process_button_action(self, button_id):
+        print("Processed action for button {}".format(button_id))
         return f"Processed action for button {button_id}"  # Replace with actual logic
 
     def process_text_input(self, button_id, text):
