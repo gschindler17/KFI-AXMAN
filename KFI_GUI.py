@@ -1,6 +1,7 @@
 import sys
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QVBoxLayout, QLineEdit
+import KFI_Controller as Controller
 
 class MyApp(QMainWindow):
     def __init__(self):
