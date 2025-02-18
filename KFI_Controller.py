@@ -12,3 +12,4 @@ class KFIController:
         text = line_edit_widget.text()
         result = self.logic.process_text_input(button_id, text)  # Call Logic function
         print(f"Button {button_id} clicked! Processed text: {result}")  # Replace with UI update if needed
+

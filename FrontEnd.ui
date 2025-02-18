@@ -417,7 +417,7 @@
      <string>OUT 10</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButton_1">
     <property name="geometry">
      <rect>
       <x>160</x>
