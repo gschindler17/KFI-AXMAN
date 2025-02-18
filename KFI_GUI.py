@@ -120,8 +120,4 @@ class MyApp(QMainWindow):
         text = self.lineEdit_12.text()
         print("Button clicked!")  # Action when button is clicked
 
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MyApp()
-    window.show()
-    sys.exit(app.exec())
+
