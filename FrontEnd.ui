@@ -563,7 +563,7 @@
      <string>Relay  3</string>
     </property>
    </widget>
-   <widget class="QLabel" name="line_1">
+   <widget class="QLabel" name="line_relay2_1">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -579,7 +579,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="line_8">
+   <widget class="QLabel" name="line_relay3_5">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -595,7 +595,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="line_4">
+   <widget class="QLabel" name="line_relay3_1">
     <property name="geometry">
      <rect>
       <x>540</x>
@@ -611,7 +611,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="line_2">
+   <widget class="QLabel" name="line_relay2_2">
     <property name="geometry">
      <rect>
       <x>430</x>
@@ -627,7 +627,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="line_5">
+   <widget class="QLabel" name="line_relay3_2">
     <property name="geometry">
      <rect>
       <x>520</x>
@@ -643,7 +643,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="line_7">
+   <widget class="QLabel" name="line_relay3_4">
     <property name="geometry">
      <rect>
       <x>600</x>
@@ -659,7 +659,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="line_6">
+   <widget class="QLabel" name="line_relay3_3">
     <property name="geometry">
      <rect>
       <x>614</x>
@@ -688,7 +688,7 @@
      <string>BUS  1</string>
     </property>
    </widget>
-   <widget class="QLabel" name="line_3">
+   <widget class="QLabel" name="line_relay2_3">
     <property name="geometry">
      <rect>
       <x>540</x>
@@ -717,7 +717,7 @@
      <string>BUS  2</string>
     </property>
    </widget>
-   <widget class="QLabel" name="line_0">
+   <widget class="QLabel" name="line_relay1_1">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -733,7 +733,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="line_9">
+   <widget class="QLabel" name="line_relay4_1">
     <property name="geometry">
      <rect>
       <x>660</x>
