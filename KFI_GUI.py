@@ -13,6 +13,8 @@ class MyApp(QMainWindow):
         self.relay_2.clicked.connect(lambda: self.controller.handle_relay_click(2))
         self.relay_3.clicked.connect(lambda: self.controller.handle_relay_click(3))
         self.volts_box_relay1.returnPressed.connect(lambda: self.controller.submit_volts(1, self.volts_box_relay1.text()))
+        self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
+        self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
         
 
     # Controller reference
