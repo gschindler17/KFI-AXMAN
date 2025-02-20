@@ -34,7 +34,9 @@ class MyApp(QMainWindow):
         # self.pushButton_22.clicked.connect(self.on_button_click22)
         # self.pushButton_23.clicked.connect(self.on_button_click23)
         # self.pushButton_24.clicked.connect(self.on_button_click24)
-        self.relay_1.clicked.connect(self.relay1_clicked)
+        self.relay_1.clicked.connect(lambda: self.controller.handle_relay_click(1))
+        self.relay_2.clicked.connect(lambda: self.controller.handle_relay_click(2))
+        self.relay_3.clicked.connect(lambda: self.controller.handle_relay_click(3))
 
     # Controller reference
     def set_controller(self, controller):
@@ -48,54 +50,39 @@ class MyApp(QMainWindow):
     #     print("\nButton 1 clicked!")  # Action when button is clicked
     
     # GUI method
-    def line_relay1_color(self, rgb_string):
+    def line_relay_color(self, relay_id, rgb_string):
 
-        #TODO Change later
-        rgb_string = "rgb(0, 255, 0)"
+        match (relay_id):
+            case(1):
+                self.line_relay1_1.setStyleSheet("background-color: {};".format(rgb_string))
+                print("GUI: Relay 1 selected")
+            case(2):
+                self.line_relay2_1.setStyleSheet("background-color: {};".format(rgb_string))
+                self.line_relay2_2.setStyleSheet("background-color: {};".format(rgb_string))
+                self.line_relay2_3.setStyleSheet("background-color: {};".format(rgb_string))
 
-        self.line_relay1_1.setStyleSheet("background-color: {};".format(rgb_string))
+                print("GUI: Relay 2 selected")
+            case(3):
+                self.line_relay3_1.setStyleSheet("background-color: {};".format(rgb_string))
+                self.line_relay3_2.setStyleSheet("background-color: {};".format(rgb_string))
+                self.line_relay3_3.setStyleSheet("background-color: {};".format(rgb_string))
+                self.line_relay3_4.setStyleSheet("background-color: {};".format(rgb_string))
+                self.line_relay3_5.setStyleSheet("background-color: {};".format(rgb_string))
 
-        print("GUI: Relay 1 selected")
+                #TODO Update later (to fourth relay)
+                self.line_relay4_1.setStyleSheet("background-color: {};".format(rgb_string))
+
+                print("GUI: Relay 3 selected")
+            case(4):
+                
+
+                print("GUI: Relay 4 selected")
+
               
     
-    # GUI method
-    def line_relay2_color(self, rgb_string):
-
-        #TODO Change later
-        rgb_string = "rgb(0, 255, 0)"
-
-        self.line_relay2_1.setStyleSheet("background-color: {};".format(rgb_string))
-        self.line_relay2_2.setStyleSheet("background-color: {};".format(rgb_string))
-        self.line_relay2_3.setStyleSheet("background-color: {};".format(rgb_string))
-
-        print("GUI: Relay 2 selected")
-
-        # GUI method
-    def line_relay3_color(self, rgb_string):
-
-        #TODO Change later
-        rgb_string = "rgb(0, 255, 0)"
-
-        self.line_relay3_1.setStyleSheet("background-color: {};".format(rgb_string))
-        self.line_relay3_2.setStyleSheet("background-color: {};".format(rgb_string))
-        self.line_relay3_3.setStyleSheet("background-color: {};".format(rgb_string))
-        self.line_relay3_4.setStyleSheet("background-color: {};".format(rgb_string))
-        self.line_relay3_5.setStyleSheet("background-color: {};".format(rgb_string))
-
-        print("GUI: Relay 3 selected")
-   
-    # GUI method
-    def line_relay4_color(self, rgb_string):
-
-        #TODO Change later
-        rgb_string = "rgb(0, 255, 0)"
-
-        self.line_relay4_1.setStyleSheet("background-color: {};".format(rgb_string))
-
-        print("GUI: Relay 4 selected")
 
 
-        
+
     # def on_button_click3(self):
     #     pass
     #     # print("Button clicked!")  # Action when button is clicked
