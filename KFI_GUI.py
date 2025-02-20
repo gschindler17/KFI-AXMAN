@@ -34,6 +34,7 @@ class MyApp(QMainWindow):
         self.pushButton_22.clicked.connect(self.on_button_click22)
         self.pushButton_23.clicked.connect(self.on_button_click23)
         self.pushButton_24.clicked.connect(self.on_button_click24)
+        self.relay_1.clicked.connect(self.on_button_click2)
 
     def set_controller(self, controller):
         # Sets the controller instance after GUI initialization.
@@ -47,6 +48,11 @@ class MyApp(QMainWindow):
         
     def on_button_click2(self):
         # print("Button clicked!")  # Action when button is clicked 
+        self.line_relay2_1.setStyleSheet("background-color: rgb(0, 255, 0);")
+        self.line_relay2_2.setStyleSheet("background-color: rgb(0, 255, 0);")
+        self.line_relay2_3.setStyleSheet("background-color: rgb(0, 255, 0);")
+
+        print("relay active")
         pass   
     
     def on_button_click3(self):
