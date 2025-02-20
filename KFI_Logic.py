@@ -5,6 +5,9 @@ class KFILogic:
         # relay1_wire matches with first index, relay2_wire matches with second, etc.
         self.relay_wires = [False, False, False, True]
 
+        # Stores voltages for each relay (relay 1 matches index 1)
+        self.relay_volts = ["0", "0", "0", "0"]
+
 
     def process_button_action(self, button_id):
         print("Processed action for button {}".format(button_id))
@@ -20,6 +23,10 @@ class KFILogic:
             return "rgb(0, 255, 0)" 
         else:
             return "rgb(255, 0, 0)"
+
+    def submit_volts(self, relay_id, text):
+        self.relay_volts[relay_id] = text
+        print(f"Logic: New relay {relay_id} value {text} volts")
 
         
 

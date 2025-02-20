@@ -24,3 +24,5 @@ class KFIController:
         self.gui.line_relay_color(relay_id, result)
         print("Controller: Relay {} clicked; sent to processing".format(relay_id))
 
+    def submit_volts(self, relay_id, text):
+        result = self.logic.submit_volts(relay_id, text)
