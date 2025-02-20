@@ -46,11 +46,15 @@ class MyApp(QMainWindow):
         self.controller.handle_button_click(1)
         print("\nButton 1 clicked!")  # Action when button is clicked
         
-    def on_button_click2(self):
+    def line_relay2_color(self, rgb_string):
         # print("Button clicked!")  # Action when button is clicked 
-        self.line_relay2_1.setStyleSheet("background-color: rgb(0, 255, 0);")
-        self.line_relay2_2.setStyleSheet("background-color: rgb(0, 255, 0);")
-        self.line_relay2_3.setStyleSheet("background-color: rgb(0, 255, 0);")
+
+        #TODO Change later
+        rgb_string = "rgb(0, 255, 0)"
+
+        self.line_relay2_1.setStyleSheet("background-color: {};".format(rgb_string))
+        self.line_relay2_2.setStyleSheet("background-color: {};".format(rgb_string))
+        self.line_relay2_3.setStyleSheet("background-color: {};".format(rgb_string))
 
         print("relay active")
         pass   
