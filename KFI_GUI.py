@@ -1,7 +1,7 @@
 import sys
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QVBoxLayout, QLineEdit
-import KFI_Controller as Controller
+import KFI_Controller as controller
 
 class MyApp(QMainWindow):
     def __init__(self):
@@ -22,26 +22,21 @@ class MyApp(QMainWindow):
         # Sets the controller instance after GUI initialization.
         print("KFI_GUI: Controller set.")
         self.controller = controller
-    
-
-
+        
     # GUI method
     def line_relay_color(self, relay_id, rgb_string):
-
         
-
-        match (relay_id):
-            case(1):
+        if(relay_id == 1):
                 self.line_relay1_1.setStyleSheet("background-color: {};".format(rgb_string))
                 print("GUI: Relay 1 selected")
 
-            case(2):
+        elif(relay_id == 2):
                 self.line_relay2_1.setStyleSheet("background-color: {};".format(rgb_string))
                 self.line_relay2_2.setStyleSheet("background-color: {};".format(rgb_string))
                 self.line_relay2_3.setStyleSheet("background-color: {};".format(rgb_string))
                 print("GUI: Relay 2 selected")
 
-            case(3):
+        elif(relay_id == 3):
                 self.line_relay3_1.setStyleSheet("background-color: {};".format(rgb_string))
                 self.line_relay3_2.setStyleSheet("background-color: {};".format(rgb_string))
                 self.line_relay3_3.setStyleSheet("background-color: {};".format(rgb_string))
@@ -53,10 +48,5 @@ class MyApp(QMainWindow):
 
                 print("GUI: Relay 3 selected")
 
-            case(4):
+        elif(relay_id == 4):
                 print("GUI: Relay 4 selected")
-
-              
-    
-
-
