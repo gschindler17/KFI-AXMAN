@@ -29,3 +29,4 @@ class KFIController:
 
     def get_voltage_pin(self, pin):
         result = self.logic.read_voltage(pin)
+        return result
