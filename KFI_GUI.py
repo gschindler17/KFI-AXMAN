@@ -16,13 +16,14 @@ class MyApp(QMainWindow):
         self.volts_box_relay1.returnPressed.connect(lambda: self.controller.submit_volts(1, self.volts_box_relay1.text()))
         self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
         self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
-        self.update_voltage(1, 2)
+        
 
     # Controller reference
     def set_controller(self, controller):
         # Sets the controller instance after GUI initialization.
         print("KFI_GUI: Controller set.")
         self.controller = controller
+        self.update_voltage(1, 2)
         
     # GUI method
     def line_relay_color(self, relay_id, rgb_string):
