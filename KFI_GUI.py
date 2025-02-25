@@ -23,7 +23,7 @@ class MyApp(QMainWindow):
         # Sets the controller instance after GUI initialization.
         print("KFI_GUI: Controller set.")
         self.controller = controller
-        self.update_voltage(1, 2)
+        self.update_voltage(1)
         
     # GUI method
     def line_relay_color(self, relay_id, rgb_string):
