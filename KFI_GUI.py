@@ -58,6 +58,7 @@ class MyApp(QMainWindow):
     def update_voltage(self, pin):
         print("KFI_GUI: Trying to update voltage on pin ", pin)
         voltage = self.controller.get_voltage_pin(1)
+        print("KFI_GUI: voltage = ", voltage)
         self.amps_box_relay3.setText("{}".format(voltage))
             
         
