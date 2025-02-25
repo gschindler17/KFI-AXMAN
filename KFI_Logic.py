@@ -49,7 +49,8 @@ class KFILogic:
 # Example usage (adjust port as needed)
 if __name__ == "__main__":
     print("Running KFI_Logic.py")
-    read_voltage('/dev/ttyACM0')  # Change this based on the correct port
+    logic = KFILogic()
+    logic.read_voltage('/dev/ttyACM0')  # Change this based on the correct port
 
 
         
