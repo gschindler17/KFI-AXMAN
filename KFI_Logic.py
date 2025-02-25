@@ -32,13 +32,13 @@ class KFILogic:
         print(f"Logic: New relay {relay_id} value {text} volts")
 
 
-    def read_voltage(self, port='/dev/ttyUSB0', baudrate=9600, interval=0.2):
+    def read_voltage(self, pin, port='/dev/ttyUSB0', baudrate=9600, interval=0.2):
         try:
             with serial.Serial(port, baudrate, timeout=0.5) as ser:
                 time.sleep(2)  # Allow time for serial connection to initialize
                 if ser.in_waiting > 0:
                     voltage = ser.readline().decode().strip()
-                    print(f"Voltage: {voltage} V")
+                    print(f"Voltage: {voltage} V for pin {pin}")
 
                     time.sleep(interval)
                     return voltage

@@ -2,6 +2,7 @@ import sys
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QVBoxLayout, QLineEdit
 import KFI_Controller as controller
+import time
 
 class MyApp(QMainWindow):
     def __init__(self):
@@ -15,7 +16,7 @@ class MyApp(QMainWindow):
         self.volts_box_relay1.returnPressed.connect(lambda: self.controller.submit_volts(1, self.volts_box_relay1.text()))
         self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
         self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
-        
+        self.update_voltage(1, 2)
 
     # Controller reference
     def set_controller(self, controller):
@@ -50,3 +51,12 @@ class MyApp(QMainWindow):
 
         elif(relay_id == 4):
                 print("GUI: Relay 4 selected")
+
+
+    def update_voltage(self, time_interval, pin):
+        print("KFI_GUI: Trying to update voltage on pin ", pin)
+        while True:
+            time.sleep(time_interval)
+            voltage = self.controller.get_voltage_pin(1)
+            self.volts_box_relay3.setText(voltage)
+        
