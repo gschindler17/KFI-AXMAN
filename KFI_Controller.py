@@ -26,3 +26,6 @@ class KFIController:
 
     def submit_volts(self, relay_id, text):
         result = self.logic.submit_volts(relay_id, text)
+
+    def get_voltage_pin(self, pin):
+        result = self.logic.read_voltage(pin)
