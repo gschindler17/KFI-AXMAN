@@ -17,6 +17,7 @@ class MyApp(QMainWindow):
         self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
         self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
         self.in_1.clicked.connect(lambda: self.update_voltage(1))
+        self.amps_box_relay3.setText("Money")
 
     # Controller reference
     def set_controller(self, controller):
@@ -57,6 +58,6 @@ class MyApp(QMainWindow):
     def update_voltage(self, pin):
         print("KFI_GUI: Trying to update voltage on pin ", pin)
         voltage = self.controller.get_voltage_pin(1)
-        self.volts_box_relay3.setText(voltage)
+        self.amps_box_relay3.setText("{}".format(voltage))
             
         
