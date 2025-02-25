@@ -1,3 +1,6 @@
+import serial
+import time
+
 class KFILogic:
     def __init__(self):
         print("Logic Initialized")
@@ -27,6 +30,26 @@ class KFILogic:
     def submit_volts(self, relay_id, text):
         self.relay_volts[relay_id] = text
         print(f"Logic: New relay {relay_id} value {text} volts")
+
+
+
+
+    def read_voltage(port='/dev/ttyUSB0', baudrate=9600, interval=3):
+        try:
+            with serial.Serial(port, baudrate, timeout=1) as ser:
+                time.sleep(2)  # Allow time for serial connection to initialize
+                while True:
+                    if ser.in_waiting > 0:
+                        voltage = ser.readline().decode().strip()
+                        print(f"Voltage: {voltage} V")
+                        time.sleep(interval)
+        except serial.SerialException as e:
+            print(f"Error: {e}")
+
+# Example usage (adjust port as needed)
+if __name__ == "__main__":
+    read_voltage('/dev/ttyACM0')  # Change this based on the correct port
+
 
         
 
