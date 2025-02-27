@@ -1,4 +1,5 @@
-
+import threading
+import time
 
 
 class KFIController:
@@ -6,6 +7,13 @@ class KFIController:
         self.gui = gui
         self.logic = logic
         print("Controller Initialized")
+
+        # Passive thread to handle updating the voltage
+        self.passive_volts_bool = True
+        self.passive_volts_speed = 0.5
+        thread = threading.Thread(target= lambda: self.passive_update_volts(), daemon=True)
+        thread.start()
+
 
     def handle_button_click(self, button_id):
         result = self.logic.process_button_action(button_id)  # Call Logic function
@@ -30,3 +38,14 @@ class KFIController:
     def get_voltage_pin(self, pin):
         result = self.logic.read_voltage(pin)
         return result
+
+    def toggle_voltage_read(self, pin):
+        self.logic.toggle_voltage_read(pin)
+
+
+    def passive_update_volts(self):
+        while(self.passive_volts_bool):
+            relay_volts = self.logic.get_relay_volts()
+            self.gui.update_volts_boxes(relay_volts)
+            print("KFI_Controller: passive update...")
+            time.sleep(self.passive_volts_speed)
