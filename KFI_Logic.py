@@ -87,8 +87,8 @@ class KFILogic:
             # Version for PC Only
             count = 0
             while (self.voltage_toggles[pin]):
-                time.sleep(1)
-                print("KFI_Logic: Pin {} sleeping...".format(pin))
+                time.sleep(2)
+                # print("KFI_Logic: Pin {} sleeping...".format(pin))
                 count = count + 1
                 self.relay_volts[pin] = count
                 print("KFI_Logic: self.relay_volts = ", count)
