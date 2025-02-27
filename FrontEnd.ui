@@ -887,6 +887,55 @@
      <string>Amps:</string>
     </property>
    </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>510</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox::indicator {
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: #888; /* Default off state color */
+}
+
+QCheckBox::indicator:checked {
+    background-color: #090; /* Default on state color */
+}
+
+QCheckBox::indicator:unchecked {
+    background-color: #888; /* Default off state color */
+}
+
+QCheckBox::indicator:checked {
+    position: relative;
+    left: 0px;
+}
+
+QCheckBox::indicator:unchecked {
+    position: relative;
+    left: 0px;
+}
+
+QCheckBox::indicator {
+    border: none;
+    margin: 0px;
+}
+
+QCheckBox {
+    background-color:transparent;
+    spacing: 10px;
+}</string>
+    </property>
+    <property name="text">
+     <string>In 1</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
