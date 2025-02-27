@@ -47,5 +47,5 @@ class KFIController:
         while(self.passive_volts_bool):
             relay_volts = self.logic.get_relay_volts()
             self.gui.update_volts_boxes(relay_volts)
-            print("KFI_Controller: passive update...")
+            # print("KFI_Controller: passive update...")
             time.sleep(self.passive_volts_speed)
