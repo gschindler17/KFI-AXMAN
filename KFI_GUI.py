@@ -11,8 +11,11 @@ class MyApp(QMainWindow):
 
         # Access the button by its object name from Qt Designer
         self.relay_1.clicked.connect(lambda: self.controller.handle_relay_click(1))
+        self.relay_1.setStyleSheet("border: 2px solid red;")
         self.relay_2.clicked.connect(lambda: self.controller.handle_relay_click(2))
+        self.relay_2.setStyleSheet("border: 2px solid red;")
         self.relay_3.clicked.connect(lambda: self.controller.handle_relay_click(3))
+        self.relay_3.setStyleSheet("border: 2px solid red;")
         self.volts_box_relay1.returnPressed.connect(lambda: self.controller.submit_volts(1, self.volts_box_relay1.text()))
         self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
         self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
@@ -30,12 +33,14 @@ class MyApp(QMainWindow):
         
         if(relay_id == 1):
                 self.line_relay1_1.setStyleSheet("background-color: {};".format(rgb_string))
+                self.relay_1.setStyleSheet( "border: 2px solid {};".format(rgb_string) )
                 print("GUI: Relay 1 selected")
 
         elif(relay_id == 2):
                 self.line_relay2_1.setStyleSheet("background-color: {};".format(rgb_string))
                 self.line_relay2_2.setStyleSheet("background-color: {};".format(rgb_string))
                 self.line_relay2_3.setStyleSheet("background-color: {};".format(rgb_string))
+                self.relay_2.setStyleSheet( "border: 2px solid {};".format(rgb_string) )
                 print("GUI: Relay 2 selected")
 
         elif(relay_id == 3):
@@ -44,6 +49,7 @@ class MyApp(QMainWindow):
                 self.line_relay3_3.setStyleSheet("background-color: {};".format(rgb_string))
                 self.line_relay3_4.setStyleSheet("background-color: {};".format(rgb_string))
                 self.line_relay3_5.setStyleSheet("background-color: {};".format(rgb_string))
+                self.relay_3.setStyleSheet( "border: 2px solid {};".format(rgb_string) )
 
                 #TODO Update later (to fourth relay)
                 self.line_relay4_1.setStyleSheet("background-color: {};".format(rgb_string))
