@@ -3,7 +3,7 @@ import serial
 import time
 
 # Initialize the serial connection to Arduino (adjust the port as needed)
-arduino = serial.Serial('/dev/ttyUSB0', 9600)  # Adjust for your Raspberry Pi's Arduino port
+arduino = serial.Serial('/dev/ttyACM0', 9600)  # Adjust for your Raspberry Pi's Arduino port
 time.sleep(2)  # Wait for Arduino to initialize
 
 # Function to toggle pin
