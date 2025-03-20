@@ -1,4 +1,4 @@
-const int pins[] = {2, 3, 4, 5};  // Pins you want to toggle
+const int pins[] = {22, 23, 24, 25};  // Pins you want to toggle
 bool pinStates[] = {false, false, false, false};  // Track pin states
 
 void setup() {
