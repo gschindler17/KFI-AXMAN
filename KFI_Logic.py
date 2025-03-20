@@ -1,8 +1,8 @@
 # TODO Fix the serial import on non-Rasp PI
-import serial
 import time
 import threading
 import json
+from KFI_Arduino import KFI_Arduino
 
 CONFIG_FILE = "config.json"
 
@@ -12,7 +12,12 @@ class KFILogic:
         print("Logic Initialized")
         
         self.use_arduino = False
+        self.arduino_object = None
         self.get_config_data()
+
+        if self.use_arduino == True:
+            # Initialize the serial connection to Arduino (adjust the port as needed)
+            self.arduino_object = KFI_Arduino('/dev/ttyACM0', 9600)
 
         # relay1_wire matches with first index, relay2_wire matches with second, etc.
         self.relay_wires = [False, False, False, False]
@@ -27,6 +32,7 @@ class KFILogic:
         self.thread1 = threading.Thread(target= lambda: self.read_voltage(1), daemon=True )
         self.thread2 = None
 
+    # Getting configuration data for the logic; only done on initialization
     def get_config_data(self):
         try:
             with open(CONFIG_FILE, "r") as file:
@@ -35,6 +41,8 @@ class KFILogic:
         except FileNotFoundError:
             print("Config file not found.")
             return False  # Default value if file is missing
+    #---------------------------------------------------
+
 
     def process_button_action(self, button_id):
         print("Processed action for button {}".format(button_id))
@@ -96,6 +104,10 @@ class KFILogic:
 
     def get_relay_volts(self):
         return self.relay_volts
+    
+    # Function to toggle pin on Arduino (abstracted by KFI_Arduino)
+    def toggle_pin(self, pin):
+        self.arduino_object.toggle_pin(pin)
 
         
     
