@@ -43,7 +43,7 @@ class KFIController:
         self.logic.toggle_voltage_read(pin)
 
     def toggle_output_pin(self, pin):
-        self.logic.set_output_pin_states(pin)
+        self.logic.toggle_output_pin(pin)
 
 
     def passive_update_volts(self):
