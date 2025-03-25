@@ -127,6 +127,7 @@ class KFI_Logic:
     # Function to toggle pin on Arduino (abstracted by KFI_Arduino)
     def toggle_output_pin(self, pin):
 
+        print(self.output_pin_states)
         if (self.use_arduino):
             self.arduino_object.toggle_output_pin(pin, self.output_pin_states[pin])
         else:
@@ -138,7 +139,7 @@ class KFI_Logic:
         else:
             self.output_pin_states[pin] == True
 
-        print(self.output_pin_states)
+        # print(self.output_pin_states)
         
             
 
