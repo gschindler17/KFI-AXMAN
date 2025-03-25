@@ -2,7 +2,7 @@ import threading
 import time
 
 
-class KFIController:
+class KFI_Controller:
     def __init__(self, gui, logic):
         self.gui = gui
         self.logic = logic

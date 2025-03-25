@@ -6,7 +6,7 @@ from PythonFiles.KFI_Arduino import KFI_Arduino
 
 CONFIG_FILE = "config.json"
 
-class KFILogic:
+class KFI_Logic:
     def __init__(self):
         
         print("Logic Initialized")
