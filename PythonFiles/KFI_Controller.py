@@ -47,7 +47,7 @@ class KFI_Controller:
 
     def handle_out_click(self, out_id):
         result =  self.logic.process_out_action(out_id)
-        self.toggle_output_pin(out_id)
+        self.toggle_output_pin(out_id+1)
         self.gui.out_button_color(out_id, result)
         print("Controller: out_{} clicked; sent to processing".format(out_id))
 
