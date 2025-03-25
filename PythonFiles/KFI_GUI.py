@@ -1,7 +1,7 @@
 import sys
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QVBoxLayout, QLineEdit
-import KFI_Controller as controller
+import PythonFiles.KFI_Controller as controller
 import time
 
 class MyApp(QMainWindow):

@@ -2,7 +2,7 @@
 import time
 import threading
 import json
-from KFI_Arduino import KFI_Arduino
+from PythonFiles.KFI_Arduino import KFI_Arduino
 
 CONFIG_FILE = "config.json"
 
