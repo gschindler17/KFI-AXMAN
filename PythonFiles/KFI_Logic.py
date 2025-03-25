@@ -1,4 +1,5 @@
 # TODO Fix the serial import on non-Rasp PI
+import serial
 import time
 import threading
 import json
