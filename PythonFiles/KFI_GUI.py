@@ -19,11 +19,35 @@ class KFI_GUI(QMainWindow):
         self.volts_box_relay1.returnPressed.connect(lambda: self.controller.submit_volts(1, self.volts_box_relay1.text()))
         self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
         self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
+        
         self.in_1.clicked.connect(lambda: self.toggle_voltage_read(1))
         
         # TODO Like this
-        self.in_2.clicked.connect(lambda: self.controller.toggle_output_pin(2))
-
+        self.out_1.clicked.connect(lambda: self.controller.handle_out_click(1))
+        self.out_1.setStyleSheet("border: 2px solid red;")
+        self.out_2.clicked.connect(lambda: self.controller.handle_out_click(2))
+        self.out_2.setStyleSheet("border: 2px solid red;")
+        self.out_3.clicked.connect(lambda: self.controller.handle_out_click(3))
+        self.out_3.setStyleSheet("border: 2px solid red;")
+        self.out_4.clicked.connect(lambda: self.controller.handle_out_click(4))
+        self.out_4.setStyleSheet("border: 2px solid red;")
+        self.out_5.clicked.connect(lambda: self.controller.handle_out_click(5))
+        self.out_5.setStyleSheet("border: 2px solid red;")
+        self.out_6.clicked.connect(lambda: self.controller.handle_out_click(6))
+        self.out_6.setStyleSheet("border: 2px solid red;")
+        self.out_7.clicked.connect(lambda: self.controller.handle_out_click(7))
+        self.out_7.setStyleSheet("border: 2px solid red;")
+        self.out_8.clicked.connect(lambda: self.controller.handle_out_click(8))
+        self.out_8.setStyleSheet("border: 2px solid red;")
+        self.out_9.clicked.connect(lambda: self.controller.handle_out_click(9))
+        self.out_9.setStyleSheet("border: 2px solid red;")
+        self.out_10.clicked.connect(lambda: self.controller.handle_out_click(10))
+        self.out_10.setStyleSheet("border: 2px solid red;")
+        self.out_11.clicked.connect(lambda: self.controller.handle_out_click(11))
+        self.out_11.setStyleSheet("border: 2px solid red;")
+        self.out_12.clicked.connect(lambda: self.controller.handle_out_click(12))
+        self.out_12.setStyleSheet("border: 2px solid red;")
+        
     # Controller reference
     def set_controller(self, controller):
         # Sets the controller instance after GUI initialization.
@@ -61,7 +85,34 @@ class KFI_GUI(QMainWindow):
 
         elif(relay_id == 4):
                 print("GUI: Relay 4 selected")
-
+    
+    def out_button_color(self, button, rgb_string):
+        if(button == 1):
+            self.out_1.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 2):
+            self.out_2.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 3):
+            self.out_3.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 4):
+            self.out_4.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 5):
+            self.out_5.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 6):
+            self.out_6.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 7):
+            self.out_7.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 7):
+            self.out_7.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 8):
+            self.out_8.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 9):
+            self.out_9.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 10):
+            self.out_10.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 11):
+            self.out_11.setStyleSheet("border: 2px solid {};".format(rgb_string))
+        if(button == 12):
+            self.out_12.setStyleSheet("border: 2px solid {};".format(rgb_string))
 
     def toggle_voltage_read(self, pin):
         print("KFI_GUI: Trying to toggle voltage read on pin ", pin)

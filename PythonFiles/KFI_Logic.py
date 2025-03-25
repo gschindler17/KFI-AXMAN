@@ -66,7 +66,15 @@ class KFI_Logic:
             return "rgb(0, 255, 0)" 
         else:
             return "rgb(255, 0, 0)"
-
+    
+    def process_out_action(self, out_id):
+        print("Logic: Processed action for relay {}".format(out_id))
+        self.output_pin_states[out_id] = not self.output_pin_states[out_id]
+        if (self.output_pin_states[out_id]):
+            return "rgb(0, 255, 0)" 
+        else:
+            return "rgb(255, 0, 0)"    
+    
     def submit_volts(self, relay_id, text):
         self.relay_volts[relay_id] = text
         print(f"Logic: New relay {relay_id} value {text} volts")
@@ -113,6 +121,9 @@ class KFI_Logic:
     def get_relay_volts(self):
         return self.relay_volts
     
+    def get_pin_status(self, pinNum):
+        return self.output_pin_states[pinNum]
+    
     # Function to toggle pin on Arduino (abstracted by KFI_Arduino)
     def toggle_output_pin(self, pin):
 
@@ -135,11 +146,5 @@ class KFI_Logic:
 # Example usage (adjust port as needed)
 if __name__ == "__main__":
     print("Running KFI_Logic.py")
-    logic = KFILogic()
+    logic = KFI_Logic.KFILogic()
     logic.read_voltage('/dev/ttyACM0')  # Change this based on the correct port
-
-
-        
-
-
-    
