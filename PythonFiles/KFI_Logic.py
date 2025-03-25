@@ -137,6 +137,8 @@ class KFI_Logic:
             self.output_pin_states[pin] == False
         else:
             self.output_pin_states[pin] == True
+
+        print(self.output_pin_states)
         
             
 
