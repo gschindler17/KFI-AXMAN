@@ -11,7 +11,7 @@ class KFI_Arduino:
         time.sleep(1)
 
     #Function to toggle pin and update label
-    def toggle_pin(self, pin, bool_state):
+    def toggle_output_pin(self, pin, bool_state):
         self.arduino.write(bytes([pin, int(bool_state)]))
         print(f"KFI_Arduino: Toggling pin {pin} to state {bool_state}")
 

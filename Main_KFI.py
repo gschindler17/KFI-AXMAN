@@ -1,8 +1,8 @@
 import sys
 from PyQt6.QtWidgets import QApplication
-import KFI_GUI
-import KFI_Controller
-import KFI_Logic
+import PythonFiles.KFI_GUI
+import PythonFiles.KFI_Controller
+import PythonFiles.KFI_Logic
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
