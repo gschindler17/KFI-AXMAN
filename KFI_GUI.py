@@ -20,6 +20,7 @@ class MyApp(QMainWindow):
         self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
         self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
         self.in_1.clicked.connect(lambda: self.toggle_voltage_read(1))
+        self.in_2.clicked.connect(lambda: self.controller.toggle_output_pin(2))
 
     # Controller reference
     def set_controller(self, controller):

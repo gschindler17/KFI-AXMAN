@@ -22,6 +22,13 @@ class KFILogic:
         # relay1_wire matches with first index, relay2_wire matches with second, etc.
         self.relay_wires = [False, False, False, False]
 
+         # All initialized to off
+        self.output_pin_states = [
+            False, False, False, False, 
+            False, False, False, False, 
+            False, False, False, False
+            ]
+
         # Stores voltages for each relay (relay 1 matches index 1)
         self.relay_volts = ["0", "0", "0", "0"]
 
@@ -106,8 +113,20 @@ class KFILogic:
         return self.relay_volts
     
     # Function to toggle pin on Arduino (abstracted by KFI_Arduino)
-    def toggle_pin(self, pin):
-        self.arduino_object.toggle_pin(pin)
+    def toggle_output_pin(self, pin):
+
+        if (self.use_arduino):
+            self.arduino_object.toggle_output_pin(pin, self.output_pin_states[pin])
+        else:
+            print("KFI_Logic: toggling pin:", self.output_pin_states[pin])
+            print("KFI_Logic: No arduino in use, check config file.")
+
+        if (self.output_pin_states[pin]):
+            self.output_pin_states[pin] == False
+        else:
+            self.output_pin_states[pin] == True
+        
+            
 
         
     
