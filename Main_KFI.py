@@ -7,9 +7,9 @@ from PythonFiles.KFI_Logic import KFI_Logic
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    logic = KFI_Logic.KFILogic()  # Instantiate Model (Logic)
-    gui = KFI_GUI.MyApp()  # Instantiate View (GUI)
-    controller = KFI_Controller.KFIController(gui, logic)  # Pass GUI and Logic to Controller
+    logic = KFI_Logic()  # Instantiate Model (Logic)
+    gui = KFI_GUI()  # Instantiate View (GUI)
+    controller = KFI_Controller(gui, logic)  # Pass GUI and Logic to Controller
 
     gui.set_controller(controller)  # Pass controller to GUI
     gui.show()
