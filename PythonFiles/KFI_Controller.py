@@ -49,7 +49,7 @@ class KFI_Controller:
         result =  self.logic.process_out_action(out_id)
         self.toggle_output_pin(out_id)
         self.gui.out_button_color(out_id, result)
-        print("Controller: out_{} clicked; sent to processing".format(out_id))
+        print("Controller: out_{} clicked".format(out_id))
 
     def passive_update_volts(self):
         while(self.passive_volts_bool):

@@ -20,9 +20,9 @@ void loop() {
       
       // Flicker the onboard LED every time a button is pressed
       digitalWrite(ledPin, HIGH);
-      delay(100);
+      delay(10);
       digitalWrite(ledPin, LOW);
-      delay(100);
+      delay(10);
 
       // Send response back to Python
       Serial.print("Pin ");

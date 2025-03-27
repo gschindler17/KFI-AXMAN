@@ -94,7 +94,7 @@ class KFI_Logic:
             try:
                 while (self.voltage_toggles[pin]):
                     with serial.Serial(port, baudrate, timeout=0.5) as ser:
-                        time.sleep(1)  # Allow time for serial connection to initialize
+                        time.sleep(0.25)  # Allow time for serial connection to initialize
                         if ser.in_waiting > 0:
                             voltage = ser.readline().decode().strip()
                             print(f"Voltage: {voltage} V for pin {pin}")
@@ -111,7 +111,7 @@ class KFI_Logic:
             # Version for PC Only
             count = 0
             while (self.voltage_toggles[pin]):
-                time.sleep(2)
+                time.sleep(1)
                 # print("KFI_Logic: Pin {} sleeping...".format(pin))
                 count = count + 1
                 self.relay_volts[pin] = count
