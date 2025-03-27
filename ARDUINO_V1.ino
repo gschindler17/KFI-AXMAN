@@ -16,19 +16,29 @@ void loop() {
     int buttonIndex = Serial.read();  // Read button index (0 to 11)
     if (buttonIndex >= 0 && buttonIndex < 12) {
       pinStates[buttonIndex] = !pinStates[buttonIndex];  // Toggle the pin state
-      digitalWrite(pins[buttonIndex], pinStates[buttonIndex] ? HIGH : LOW);
+
+      pin_state = HIGH
+
+      if (pinStates[buttonIndex]) {
+        pin_state = HIGH
+      }
+      else {
+        pin_state = LOW
+      }
+
+      digitalWrite(pins[buttonIndex], pin_state);
       
       // Flicker the onboard LED every time a button is pressed
-      digitalWrite(ledPin, HIGH);
-      delay(10);
-      digitalWrite(ledPin, LOW);
-      delay(10);
+      // digitalWrite(ledPin, HIGH);
+      // delay(10);
+      // digitalWrite(ledPin, LOW);
+      // delay(10);
 
       // Send response back to Python
       Serial.print("Pin ");
       Serial.print(pins[buttonIndex]);
       Serial.print(" set to ");
-      Serial.println(pinStates[buttonIndex] ? "HIGH" : "LOW");
+      Serial.println(pin_state);
     }
   }
 }
