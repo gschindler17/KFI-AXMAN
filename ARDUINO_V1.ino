@@ -23,6 +23,12 @@ void loop() {
       delay(100);
       digitalWrite(ledPin, LOW);
       delay(100);
+
+      // Send response back to Python
+      Serial.print("Pin ");
+      Serial.print(pins[pinIndex]);
+      Serial.print(" set to ");
+      Serial.println(state ? "HIGH" : "LOW");
     }
   }
 }
