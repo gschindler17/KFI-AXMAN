@@ -48,6 +48,22 @@ class KFI_GUI(QMainWindow):
         self.out_12.clicked.connect(lambda: self.controller.handle_out_click(11))
         self.out_12.setStyleSheet("border: 2px solid red;")
         
+        self.in_1.clicked.connect(lambda:self.controller.handle_in_click(0))
+        self.in_2.clicked.connect(lambda:self.controller.handle_in_click(1))
+        self.in_3.clicked.connect(lambda:self.controller.handle_in_click(2))
+        self.in_4.clicked.connect(lambda:self.controller.handle_in_click(3))
+        self.in_5.clicked.connect(lambda:self.controller.handle_in_click(4))
+        self.in_6.clicked.connect(lambda:self.controller.handle_in_click(5))
+        self.in_7.clicked.connect(lambda:self.controller.handle_in_click(6))
+        self.in_8.clicked.connect(lambda:self.controller.handle_in_click(7))
+        self.in_9.clicked.connect(lambda:self.controller.handle_in_click(8))
+        self.in_10.clicked.connect(lambda:self.controller.handle_in_click(9))
+        self.in_11.clicked.connect(lambda:self.controller.handle_in_click(10))
+        self.in_12.clicked.connect(lambda:self.controller.handle_in_click(11))
+
+        
+        
+        
     # Controller reference
     def set_controller(self, controller):
         # Sets the controller instance after GUI initialization.
@@ -112,6 +128,32 @@ class KFI_GUI(QMainWindow):
         if(button == 11):
             self.out_12.setStyleSheet("border: 2px solid {};".format(rgb_string))
 
+    def update_line(self, line_id, text):
+        if (line_id == 1):
+            self.in_text1.setText(text)
+        if (line_id == 2):
+            self.in_text2.setText(text)
+        if (line_id == 3):
+            self.in_text3.setText(text)
+        if (line_id == 4):
+            self.in_text4.setText(text)
+        if (line_id == 5):
+            self.in_text5.setText(text)
+        if (line_id == 6):
+            self.in_text6.setText(text)
+        if (line_id == 7):
+            self.in_text7.setText(text)
+        if (line_id == 8):
+            self.in_text8.setText(text)
+        if (line_id == 9):
+            self.in_text9.setText(text)
+        if (line_id == 10):
+            self.in_text10.setText(text)
+        if (line_id == 11):
+            self.in_text11.setText(text) 
+        if (line_id == 12):
+            self.in_text12.setText(text)   
+    
     def toggle_voltage_read(self, pin):
         print("KFI_GUI: Trying to toggle voltage read on pin ", pin)
         self.controller.toggle_voltage_read(1)
@@ -121,8 +163,3 @@ class KFI_GUI(QMainWindow):
         self.amps_box_relay1.setText("{}".format(volts_list[1]))
         self.amps_box_relay3.setText("{}".format(volts_list[3]))
             
-        
-    
-
-            
-    

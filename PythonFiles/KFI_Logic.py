@@ -142,7 +142,12 @@ class KFI_Logic:
             self.output_pin_states[pin] == True
 
         # print(self.output_pin_states)
-        
+    
+    def get_input_data(self, in_id):
+        if (self.use_arduino):
+            result = self.arduino_object.get_input_pin(in_id)
+        return result
+            
             
 
         

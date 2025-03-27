@@ -51,6 +51,12 @@ class KFI_Controller:
         self.gui.out_button_color(out_id, result)
         print("Controller: out_{} clicked".format(out_id))
 
+    def handle_in_click(self, in_id, line_id):
+        result = self.logic.get_input_data(in_id)
+        self.gui_in_button(in_id, result)
+        self.gui.update_line(line_id, result)
+        print('controller: in_{} clicked'.format(in_id))
+
     def passive_update_volts(self):
         while(self.passive_volts_bool):
             relay_volts = self.logic.get_relay_volts()
