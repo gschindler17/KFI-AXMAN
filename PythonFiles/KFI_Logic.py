@@ -18,7 +18,7 @@ class KFI_Logic:
 
         if self.use_arduino == True:
             # Initialize the serial connection to Arduino (adjust the port as needed)
-            self.arduino_object = KFI_Arduino('/dev/ttyACM0', 9600)
+            self.arduino_object = KFI_Arduino('/dev/ttyACM1', 9600)
 
         # relay1_wire matches with first index, relay2_wire matches with second, etc.
         self.relay_wires = [False, False, False, False]
@@ -89,7 +89,7 @@ class KFI_Logic:
             self.thread1.start()
             print("KFI_Logic: Toggled on {} voltage reader".format(voltage_num))
     
-    def read_voltage(self, pin, port='/dev/ttyACM0', baudrate=9600, interval=0.2):
+    def read_voltage(self, pin, port='/dev/ttyACM1', baudrate=9600, interval=0.2):
         if (self.use_arduino):
             try:
                 while (self.voltage_toggles[pin]):
@@ -149,4 +149,4 @@ class KFI_Logic:
 if __name__ == "__main__":
     print("Running KFI_Logic.py")
     logic = KFI_Logic.KFILogic()
-    logic.read_voltage('/dev/ttyACM0')  # Change this based on the correct port
+    logic.read_voltage('/dev/ttyACM1')  # Change this based on the correct port
