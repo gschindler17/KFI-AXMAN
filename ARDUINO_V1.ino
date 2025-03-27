@@ -26,9 +26,9 @@ void loop() {
 
       // Send response back to Python
       Serial.print("Pin ");
-      Serial.print(pins[pinIndex]);
+      Serial.print(pins[buttonIndex]);
       Serial.print(" set to ");
-      Serial.println(state ? "HIGH" : "LOW");
+      Serial.println(pinStates[buttonIndex] ? "HIGH" : "LOW");
     }
   }
 }
