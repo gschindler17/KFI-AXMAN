@@ -14,11 +14,12 @@ class KFI_Logic:
         
         self.use_arduino = False
         self.arduino_object = None
+        self.arduino_port = None
         self.get_config_data()
 
         if self.use_arduino == True:
             # Initialize the serial connection to Arduino (adjust the port as needed)
-            self.arduino_object = KFI_Arduino('/dev/ttyACM1', 9600)
+            self.arduino_object = KFI_Arduino(self.arduino_port, 9600)
 
         # relay1_wire matches with first index, relay2_wire matches with second, etc.
         self.relay_wires = [False, False, False, False]
@@ -46,6 +47,8 @@ class KFI_Logic:
             with open(CONFIG_FILE, "r") as file:
                 config = json.load(file)
                 self.use_arduino = config.get("use_arduino", False)  # Default to False if key is missing
+                self.arduino_port = config.get("arduino_port", "/dev/ttyACM0")  # Default to False if key is missing
+                
         except FileNotFoundError:
             print("Config file not found.")
             return False  # Default value if file is missing
@@ -89,11 +92,11 @@ class KFI_Logic:
             self.thread1.start()
             print("KFI_Logic: Toggled on {} voltage reader".format(voltage_num))
     
-    def read_voltage(self, pin, port='/dev/ttyACM1', baudrate=9600, interval=0.2):
+    def read_voltage(self, pin, baudrate=9600, interval=0.2):
         if (self.use_arduino):
             try:
                 while (self.voltage_toggles[pin]):
-                    with serial.Serial(port, baudrate, timeout=0.5) as ser:
+                    with serial.Serial(self.arduino_port, baudrate, timeout=0.5) as ser:
                         time.sleep(0.25)  # Allow time for serial connection to initialize
                         if ser.in_waiting > 0:
                             voltage = ser.readline().decode().strip()
@@ -149,4 +152,4 @@ class KFI_Logic:
 if __name__ == "__main__":
     print("Running KFI_Logic.py")
     logic = KFI_Logic.KFILogic()
-    logic.read_voltage('/dev/ttyACM1')  # Change this based on the correct port
+    logic.read_voltage(logic.arduino_port)  # Change this based on the correct port

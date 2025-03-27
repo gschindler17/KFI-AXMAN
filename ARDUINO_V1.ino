@@ -17,13 +17,13 @@ void loop() {
     if (buttonIndex >= 0 && buttonIndex < 12) {
       pinStates[buttonIndex] = !pinStates[buttonIndex];  // Toggle the pin state
 
-      pin_state = HIGH
+      int pin_state = HIGH;
 
       if (pinStates[buttonIndex]) {
-        pin_state = HIGH
+        pin_state = HIGH;
       }
       else {
-        pin_state = LOW
+        pin_state = LOW;
       }
 
       digitalWrite(pins[buttonIndex], pin_state);
