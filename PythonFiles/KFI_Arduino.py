@@ -33,10 +33,8 @@ class KFI_Arduino:
     def get_input_pin(self,pin):
         self.arduino.write(bytes([0xA0, pin]))  # 0xA0: Custom command to request a pin reading
 
-
-
         # Wait for the Arduino's response
-        response = self.arduino.readline().decode().strip()
+        # response = self.arduino.readline().decode().strip()
 
 
     def read_arduino_response(self):
