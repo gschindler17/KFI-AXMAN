@@ -20,7 +20,7 @@ void loop() {
     int buttonIndex = Serial.read();  // Read button index (0 to 11)
     Serial.print("Raw input: ");
     Serial.print(buttonIndex);
-    if (buttonIndex >= 0 && buttonIndex < 12) {
+    if (buttonIndex >= 22 && buttonIndex <= 33) {
       pinStates[buttonIndex] = !pinStates[buttonIndex];  // Toggle the pin state
 
       int pin_state = HIGH;
@@ -41,7 +41,7 @@ void loop() {
       // delay(10);
 
       // Send response back to Python
-      Serial.print("Pin ");
+      Serial.println("Pin ");
       Serial.print(pins[buttonIndex]);
       Serial.print(" set to ");
       Serial.println(pin_state);
