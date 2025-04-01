@@ -49,18 +49,29 @@ class KFI_GUI(QMainWindow):
         self.out_12.setStyleSheet("border: 2px solid red;")
         
         self.in_1.clicked.connect(lambda:self.controller.handle_in_click(0))
+        self.in_1.setStyleSheet("border: 2px solid red;")
         self.in_2.clicked.connect(lambda:self.controller.handle_in_click(1))
+        self.in_2.setStyleSheet("border: 2px solid red;")
         self.in_3.clicked.connect(lambda:self.controller.handle_in_click(2))
+        self.in_3.setStyleSheet("border: 2px solid red;")
         self.in_4.clicked.connect(lambda:self.controller.handle_in_click(3))
+        self.in_4.setStyleSheet("border: 2px solid red;")
         self.in_5.clicked.connect(lambda:self.controller.handle_in_click(4))
+        self.in_5.setStyleSheet("border: 2px solid red;")
         self.in_6.clicked.connect(lambda:self.controller.handle_in_click(5))
+        self.in_6.setStyleSheet("border: 2px solid red;")
         self.in_7.clicked.connect(lambda:self.controller.handle_in_click(6))
+        self.in_7.setStyleSheet("border: 2px solid red;")
         self.in_8.clicked.connect(lambda:self.controller.handle_in_click(7))
+        self.in_8.setStyleSheet("border: 2px solid red;")
         self.in_9.clicked.connect(lambda:self.controller.handle_in_click(8))
+        self.in_9.setStyleSheet("border: 2px solid red;")
         self.in_10.clicked.connect(lambda:self.controller.handle_in_click(9))
+        self.in_10.setStyleSheet("border: 2px solid red;")
         self.in_11.clicked.connect(lambda:self.controller.handle_in_click(10))
+        self.in_11.setStyleSheet("border: 2px solid red;")
         self.in_12.clicked.connect(lambda:self.controller.handle_in_click(11))
-
+        self.in_12.setStyleSheet("border: 2px solid red;")
         
         
         

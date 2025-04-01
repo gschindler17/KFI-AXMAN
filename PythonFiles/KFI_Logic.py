@@ -144,9 +144,6 @@ class KFI_Logic:
 
         # print(self.output_pin_states)
         
-            
-
-        
     
 
 # Example usage (adjust port as needed)
