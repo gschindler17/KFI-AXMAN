@@ -13,40 +13,34 @@ void setup() {
 }
 
 void loop() {
-  if (Serial.available() > 0) {
+  if (Serial.available()) {
+    String received = Serial.readStringUntil('\n'); // Read incoming data
+    received.trim(); // Remove extra spaces or newlines
+
+    int commaIndex = received.indexOf(',');
+    if (commaIndex == -1) return; // Invalid format, ignore
     
-    delay(100);  // Allow time for serial buffer to fill (adjust if needed)
-    
-    int buttonIndex = Serial.read();  // Read button index (0 to 11)
-    Serial.print("Raw input: ");
-    Serial.print(buttonIndex);
-    if (buttonIndex >= 22 && buttonIndex <= 33) {
-      pinStates[buttonIndex] = !pinStates[buttonIndex];  // Toggle the pin state
+    int pin = received.substring(0, commaIndex).toInt();
+    String state = received.substring(commaIndex + 1);
 
-      int pin_state = HIGH;
+    // Validate pin and set state
+    bool validPin = false;
+    for (int i = 0; i < pinCount; i++) {
+        if (pins[i] == pin) {
+            validPin = true;
+            digitalWrite(pin, state == "HIGH" ? HIGH : LOW);
+            break;
+        }
+    }
 
-      if (pinStates[buttonIndex]) {
-        pin_state = HIGH;
-      }
-      else {
-        pin_state = LOW;
-      }
-
-      digitalWrite(pins[buttonIndex], pin_state);
-      
-      // Flicker the onboard LED every time a button is pressed
-      // digitalWrite(ledPin, HIGH);
-      // delay(10);
-      // digitalWrite(ledPin, LOW);
-      // delay(10);
-
-      // Send response back to Python
-      Serial.println("Pin ");
-      Serial.print(pins[buttonIndex]);
-      Serial.print(" set to ");
-      Serial.println(pin_state);
-
-      Serial.flush();  // Clear any remaining serial buffer data
+    // Send response
+    if (validPin) {
+        Serial.print("Set Pin ");
+        Serial.print(pin);
+        Serial.print(" to ");
+        Serial.println(state);
+    } else {
+        Serial.println("Invalid pin");
     }
   }
 }
