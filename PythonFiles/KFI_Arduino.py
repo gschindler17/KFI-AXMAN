@@ -19,6 +19,7 @@ class KFI_Arduino:
     def toggle_output_pin(self, pin, bool_state):
         if pin not in self.pin_nums or bool_state not in [True, False]:
             print("Invalid pin or state")
+            print("\nPin: ", pin, " State:", bool_state, "\n")
             return
         
         state_set = "LOW"
