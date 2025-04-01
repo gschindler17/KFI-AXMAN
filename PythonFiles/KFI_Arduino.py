@@ -14,7 +14,6 @@ class KFI_Arduino:
         self.arduino.timeout = 5  
         time.sleep(0.05)
 
-        self.read_arduino_response()
 
     #Function to toggle pin and update label
     def toggle_output_pin(self, pin, bool_state):

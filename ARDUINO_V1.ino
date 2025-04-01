@@ -1,5 +1,6 @@
 const int pins[] = {33,32,31,30,29,28,27,26,25,24,23,22};  // 12 pins
 const int inpin[] = {22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33};
+const int pinCount = 12;
 bool pinStates[12] = {false};  // Track pin states
 const int ledPin = LED_BUILTIN;  // Onboard LED pin (usually pin 13)
 
