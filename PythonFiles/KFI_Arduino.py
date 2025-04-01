@@ -14,7 +14,7 @@ class KFI_Arduino:
     #Function to toggle pin and update label
     def toggle_output_pin(self, pin, bool_state):
         print(f"KFI_Arduino: Toggling pin {self.pin_nums[pin]}")
-        self.arduino.write(self.pin_nums[pin])
+        self.arduino.write(bytes([self.pin_nums[pin]]))
         print(f"KFI_Arduino: Toggled pin {self.pin_nums[pin]}")
         
 
