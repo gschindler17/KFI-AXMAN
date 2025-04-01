@@ -21,7 +21,7 @@ class KFI_Arduino:
         
 
         # Wait for a response from Arduino
-        response = self.arduino.readline().decode().strip()
+        response = None
         if response:
             print(f"Arduino Response: {response}")
         else:
