@@ -7,12 +7,13 @@ class KFI_Arduino:
         
         # Creates a serial link to the Arduino
         # How commands are sent
+        self.pin_nums = [33,32,31,30,29,28,27,26,25,24,23,22]
         self.arduino = serial.Serial(comm_type, port_num)
         time.sleep(0.05)
 
     #Function to toggle pin and update label
     def toggle_output_pin(self, pin, bool_state):
-        self.arduino.write(pin)
+        self.arduino.write(self.pin_nums[pin])
         print(f"KFI_Arduino: Toggling pin {pin}")
 
         # Wait for a response from Arduino
