@@ -9,6 +9,8 @@ class KFI_Arduino:
         # How commands are sent
         self.pin_nums = [33,32,31,30,29,28,27,26,25,24,23,22]
         self.arduino = serial.Serial(comm_type, port_num)
+        # Set a timeout for 5 seconds
+        self.arduino.timeout = 5  
         time.sleep(0.05)
 
     #Function to toggle pin and update label
