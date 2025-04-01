@@ -14,6 +14,9 @@ void setup() {
 
 void loop() {
   if (Serial.available() > 0) {
+    
+    delay(10);  // Allow time for serial buffer to fill (adjust if needed)
+    
     int buttonIndex = Serial.read();  // Read button index (0 to 11)
     if (buttonIndex >= 0 && buttonIndex < 12) {
       pinStates[buttonIndex] = !pinStates[buttonIndex];  // Toggle the pin state
@@ -40,6 +43,8 @@ void loop() {
       Serial.print(pins[buttonIndex]);
       Serial.print(" set to ");
       Serial.println(pin_state);
+
+      Serial.flush();  // Clear any remaining serial buffer data
     }
   }
 }
