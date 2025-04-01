@@ -17,7 +17,7 @@ class KFI_Arduino:
 
     #Function to toggle pin and update label
     def toggle_output_pin(self, pin, bool_state):
-        if pin not in self.pin_nums or bool_state not in [True, False]:
+        if self.pin_nums[pin] not in self.pin_nums or bool_state not in [True, False]:
             print("Invalid pin or state")
             print("\nPin: ", pin, " State:", bool_state, "\n")
             return
@@ -26,7 +26,7 @@ class KFI_Arduino:
         if bool_state:
             state_set = "HIGH"
 
-        message = f"{pin},{state_set}\n"
+        message = f"{self.pin_nums[pin]},{state_set}\n"
         self.arduino.write(message.encode())  # Send data to Arduino
         print(f"Sent: {message.strip()}")
         
