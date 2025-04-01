@@ -47,7 +47,7 @@ class KFI_Arduino:
             response = ""
 
             while time.time() - start_time < 5:
-                if self.arduino.in_waiting > 0:  # Check if data is available
+                if self.arduino.in_waiting > 0:
                     response = self.arduino.readline().decode().strip()
                     break  # Exit loop when data is received
 
