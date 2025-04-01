@@ -1,5 +1,6 @@
 import serial
 import time
+import threading
 
 
 class KFI_Arduino:
@@ -13,6 +14,8 @@ class KFI_Arduino:
         self.arduino.timeout = 5  
         time.sleep(0.05)
 
+        self.read_arduino_response()
+
     #Function to toggle pin and update label
     def toggle_output_pin(self, pin, bool_state):
         print(f"KFI_Arduino: Toggling pin {self.pin_nums[pin]}")
@@ -21,7 +24,7 @@ class KFI_Arduino:
         
 
         # Wait for a response from Arduino
-        response = None
+        response = self.arduino.readline().decode().strip()
         if response:
             print(f"Arduino Response: {response}")
         else:
@@ -30,5 +33,29 @@ class KFI_Arduino:
     def get_input_pin(self,pin):
         self.arduino.write(bytes([0xA0, pin]))  # 0xA0: Custom command to request a pin reading
 
+
+
         # Wait for the Arduino's response
         response = self.arduino.readline().decode().strip()
+
+
+    def read_arduino_response(self):
+    
+    
+        def _read():
+            start_time = time.time()
+            response = ""
+
+            while time.time() - start_time < 5:
+                if self.arduino.in_waiting > 0:  # Check if data is available
+                    response = self.arduino.readline().decode().strip()
+                    break  # Exit loop when data is received
+
+            if response:
+                print(f"Arduino Response: {response}")
+            else:
+                print("Timeout: No response from Arduino within 5 seconds.")
+
+        # Start the reading process in a new thread
+        thread = threading.Thread(target=_read, daemon=True)
+        thread.start()
