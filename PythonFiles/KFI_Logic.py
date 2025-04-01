@@ -93,6 +93,7 @@ class KFI_Logic:
             print("KFI_Logic: Toggled on {} voltage reader".format(voltage_num))
     
     def read_voltage(self, pin, baudrate=9600, interval=0.2):
+        
         if (self.use_arduino):
             try:
                 while (self.voltage_toggles[pin]):
@@ -100,7 +101,7 @@ class KFI_Logic:
                         time.sleep(0.25)  # Allow time for serial connection to initialize
                         if ser.in_waiting > 0:
                             voltage = ser.readline().decode().strip()
-                            print(f"Voltage: {voltage} V for pin {pin}")
+                            # print(f"Voltage: {voltage} V for pin {pin}")
 
                             time.sleep(interval)
                             return voltage
@@ -142,12 +143,7 @@ class KFI_Logic:
             self.output_pin_states[pin] == True
 
         # print(self.output_pin_states)
-    
-    def get_input_data(self, in_id):
-        if (self.use_arduino):
-            result = self.arduino_object.get_input_pin(in_id)
-        return result
-            
+        
             
 
         
