@@ -25,6 +25,8 @@ void loop() {
     String received = Serial.readStringUntil('\n'); // Read incoming data
     received.trim(); // Remove extra spaces or newlines
 
+    Serial.print(received);
+
     if (received == "READ") {  
       // Send input pin states as "1,0,1,0"
       for (int i = 0; i < pinCount; i++) {
@@ -48,8 +50,8 @@ void loop() {
           if (pins[i] == pin) {
               validPin = true;
               digitalWrite(pin, state == "HIGH" ? HIGH : LOW);
-              Serial.print(pin)
-              Serial.print(state)
+              Serial.print(pin);
+              Serial.print(state);
               Serial.println();  // End response
               break;
           }

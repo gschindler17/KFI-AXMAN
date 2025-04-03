@@ -10,7 +10,7 @@ class KFI_Controller:
 
         # Passive thread to handle updating the voltage
         self.taking_input_bool = True
-        self.input_delay = 10
+        self.input_delay = 2
         thread = threading.Thread(target= lambda: self.READ_ALL_INPUTS(), daemon=True)
         thread.start()
 
