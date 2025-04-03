@@ -18,4 +18,4 @@ if __name__ == "__main__":
         sys.exit(app.exec())
     except KeyboardInterrupt:
         print("\nKeyboardInterrupt detected. Exiting gracefully...")
-        sys.exit(0)
+        sys.exit()  # Exits the whole script, including all threads
