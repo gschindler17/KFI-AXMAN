@@ -30,12 +30,13 @@ class KFI_Logic:
             False, False, False, False, 
             False, False, False, False
             ]
+        
+        self.input_pin_states = [
+            False, False, False, False, 
+            False, False, False, False, 
+            False, False, False, False
+            ]
 
-        # Stores voltages for each relay (relay 1 matches index 1)
-        self.relay_volts = ["0", "0", "0", "0"]
-
-        # Toggles for whether or not voltages should be read
-        self.voltage_toggles = [False, False, False, False]
 
         # List of all threads active or inactive
         self.thread1 = threading.Thread(target= lambda: self.read_voltage(1), daemon=True )
@@ -78,52 +79,52 @@ class KFI_Logic:
         else:
             return "rgb(255, 0, 0)"    
     
-    def submit_volts(self, relay_id, text):
-        self.relay_volts[relay_id] = text
-        print(f"Logic: New relay {relay_id} value {text} volts")
+    # def submit_volts(self, relay_id, text):
+    #     self.relay_volts[relay_id] = text
+    #     print(f"Logic: New relay {relay_id} value {text} volts")
 
-    def toggle_voltage_read(self, voltage_num):
-        if (self.voltage_toggles[voltage_num] == True):
-            self.voltage_toggles[voltage_num] = False
-            print("KFI_Logic: Toggled {} voltage reader to off".format(voltage_num))
-        else:
-            self.voltage_toggles[voltage_num] = True
-            self.thread1 = threading.Thread(target= lambda: self.read_voltage(voltage_num), daemon=True )
-            self.thread1.start()
-            print("KFI_Logic: Toggled on {} voltage reader".format(voltage_num))
+    # def toggle_voltage_read(self, voltage_num):
+    #     if (self.voltage_toggles[voltage_num] == True):
+    #         self.voltage_toggles[voltage_num] = False
+    #         print("KFI_Logic: Toggled {} voltage reader to off".format(voltage_num))
+    #     else:
+    #         self.voltage_toggles[voltage_num] = True
+    #         self.thread1 = threading.Thread(target= lambda: self.read_voltage(voltage_num), daemon=True )
+    #         self.thread1.start()
+    #         print("KFI_Logic: Toggled on {} voltage reader".format(voltage_num))
     
-    def read_voltage(self, pin, baudrate=9600, interval=0.2):
+    # def read_voltage(self, pin, baudrate=9600, interval=0.2):
         
-        if (self.use_arduino):
-            try:
-                while (self.voltage_toggles[pin]):
-                    with serial.Serial(self.arduino_port, baudrate, timeout=0.5) as ser:
-                        time.sleep(0.25)  # Allow time for serial connection to initialize
-                        if ser.in_waiting > 0:
-                            voltage = ser.readline().decode().strip()
-                            # print(f"Voltage: {voltage} V for pin {pin}")
+    #     if (self.use_arduino):
+    #         try:
+    #             while (self.voltage_toggles[pin]):
+    #                 with serial.Serial(self.arduino_port, baudrate, timeout=0.5) as ser:
+    #                     time.sleep(0.25)  # Allow time for serial connection to initialize
+    #                     if ser.in_waiting > 0:
+    #                         voltage = ser.readline().decode().strip()
+    #                         # print(f"Voltage: {voltage} V for pin {pin}")
 
-                            time.sleep(interval)
-                            return voltage
+    #                         time.sleep(interval)
+    #                         return voltage
 
-            except serial.SerialException as e:
-                print(f"Error: {e}")
-                return 999
+    #         except serial.SerialException as e:
+    #             print(f"Error: {e}")
+    #             return 999
         
-        else:
-            # TODO Use a config file
-            # Version for PC Only
-            count = 0
-            while (self.voltage_toggles[pin]):
-                time.sleep(1)
-                # print("KFI_Logic: Pin {} sleeping...".format(pin))
-                count = count + 1
-                self.relay_volts[pin] = count
-                print("KFI_Logic: self.relay_volts = ", count)
-                pass
+    #     else:
+    #         # TODO Use a config file
+    #         # Version for PC Only
+    #         count = 0
+    #         while (self.voltage_toggles[pin]):
+    #             time.sleep(1)
+    #             # print("KFI_Logic: Pin {} sleeping...".format(pin))
+    #             count = count + 1
+    #             self.relay_volts[pin] = count
+    #             print("KFI_Logic: self.relay_volts = ", count)
+    #             pass
 
-    def get_relay_volts(self):
-        return self.relay_volts
+    # def get_relay_volts(self):
+    #     return self.relay_volts
     
     def get_pin_status(self, pinNum):
         return self.output_pin_states[pinNum]
@@ -143,6 +144,13 @@ class KFI_Logic:
             self.output_pin_states[pin] == True
 
         # print(self.output_pin_states)
+
+    def READ_ALL_INPUTS(self):
+        if (self.use_arduino):
+            self.input_pin_states = self.arduino_object.READ_ALL_INPUTS()
+        else:
+            print("KFI_Logic: reading all inputs")
+            print("\nKFI_Logic: No arduino in use, check config file.\n")
         
     
 
@@ -150,4 +158,4 @@ class KFI_Logic:
 if __name__ == "__main__":
     print("Running KFI_Logic.py")
     logic = KFI_Logic.KFILogic()
-    logic.read_voltage(logic.arduino_port)  # Change this based on the correct port
+    

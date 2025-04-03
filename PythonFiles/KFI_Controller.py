@@ -9,9 +9,9 @@ class KFI_Controller:
         print("Controller Initialized")
 
         # Passive thread to handle updating the voltage
-        self.passive_volts_bool = True
-        self.passive_volts_speed = 0.5
-        thread = threading.Thread(target= lambda: self.passive_update_volts(), daemon=True)
+        self.taking_input_bool = True
+        self.input_delay = 10
+        thread = threading.Thread(target= lambda: self.READ_ALL_INPUTS(), daemon=True)
         thread.start()
 
 
@@ -32,16 +32,6 @@ class KFI_Controller:
         self.gui.line_relay_color(relay_id, result)
         print("Controller: Relay {} clicked; sent to processing".format(relay_id))
 
-    def submit_volts(self, relay_id, text):
-        result = self.logic.submit_volts(relay_id, text)
-
-    def get_voltage_pin(self, pin):
-        result = self.logic.read_voltage(pin)
-        return result
-
-    def toggle_voltage_read(self, pin):
-        self.logic.toggle_voltage_read(pin)
-
     def toggle_output_pin(self, pin):
         self.logic.toggle_output_pin(pin)
 
@@ -55,11 +45,10 @@ class KFI_Controller:
         result = self.logic.get_input_data(in_id)
         self.gui_in_button(in_id, result)
         self.gui.update_line(line_id, result)
-        print('controller: in_{} clicked'.format(in_id))
+        print('Controller: in_{} clicked'.format(in_id))
 
-    def passive_update_volts(self):
-        while(self.passive_volts_bool):
-            relay_volts = self.logic.get_relay_volts()
-            self.gui.update_volts_boxes(relay_volts)
-            # print("KFI_Controller: passive update...")
-            time.sleep(self.passive_volts_speed)
+
+    def READ_ALL_INPUTS(self):
+        while(self.taking_input_bool):
+            self.logic.READ_ALL_INPUTS()
+            time.sleep(self.input_delay)

@@ -9,6 +9,7 @@ class KFI_Arduino:
         # Creates a serial link to the Arduino
         # How commands are sent
         self.pin_nums = [33,32,31,30,29,28,27,26,25,24,23,22]
+        self.input_pin_nums = [53,52,51,50,49,48,47,46,45,44,43,42,41]
         self.arduino = serial.Serial(comm_type, port_num, timeout=1)
         # Set a timeout for 5 seconds
         self.arduino.timeout = 5  
@@ -36,25 +37,31 @@ class KFI_Arduino:
         if response:
             print(f"Arduino Response: {response}")
         
-        
-        
-        # print(f"KFI_Arduino: Toggling pin {self.pin_nums[pin]}")
-        # self.arduino.write(bytes([self.pin_nums[pin]]))
-        # print(f"KFI_Arduino: Toggled pin {self.pin_nums[pin]}")
-        
-
-        # # Wait for a response from Arduino
-        # response = self.arduino.readline().decode().strip()
-        # if response:
-        #     print(f"Arduino Response: {response}")
-        # else:
-        #     print("No response from Arduino.")
 
     def get_input_pin(self,pin):
-        self.arduino.write(bytes([0xA0, pin]))  # 0xA0: Custom command to request a pin reading
+        print(f"KFI_Arduino: Trying to get input on pin #{pin}")
+        
+        
 
         # Wait for the Arduino's response
         response = self.arduino.readline().decode().strip()
+        print(f"KFI_Arduino: received response on pin #{pin} of {response}")
+
+    
+    # SHOULD RETURN AN ARRAY OF BOOLEANS
+    def READ_ALL_INPUTS(self):
+        
+        self.arduino.write(b'READ\n')  # 0xA0: Custom command to request a pin reading
+        # Wait for the Arduino's response
+        response = self.arduino.readline().decode().strip()
+
+        print("KFI_Arduino: Completed read all inputs:", response)  
+
+        return [
+            True, True, True, True, 
+            True, True, True, True, 
+            True, True, True, True
+            ] 
 
 
     
