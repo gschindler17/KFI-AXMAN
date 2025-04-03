@@ -27,9 +27,9 @@ void loop() {
 
     if (received == "READ") {  
       // Send input pin states as "1,0,1,0"
-      for (int i = 0; i < inputPinCount; i++) {
-          Serial.print(digitalRead(inputPins[i]));
-          if (i < inputPinCount - 1) Serial.print(",");
+      for (int i = 0; i < pinCount; i++) {
+          Serial.print(digitalRead(inpin[i]));
+          if (i < pinCount - 1) Serial.print(",");
       }
       Serial.println();  // End response
       return;  // Exit loop to avoid processing further

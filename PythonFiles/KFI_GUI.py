@@ -20,7 +20,7 @@ class KFI_GUI(QMainWindow):
         self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
         self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
         
-        self.in_1.clicked.connect(lambda: self.toggle_voltage_read(1))
+        # self.in_1.clicked.connect(lambda: self.toggle_voltage_read(1))
         
         # TODO Like this
         self.out_1.clicked.connect(lambda: self.controller.handle_out_click(0))
@@ -80,7 +80,7 @@ class KFI_GUI(QMainWindow):
         # Sets the controller instance after GUI initialization.
         print("KFI_GUI: Controller set.")
         self.controller = controller
-        self.toggle_voltage_read(1)
+        
         
     # GUI method
     def line_relay_color(self, relay_id, rgb_string):
@@ -165,12 +165,12 @@ class KFI_GUI(QMainWindow):
         if (line_id == 12):
             self.in_text12.setText(text)   
     
-    def toggle_voltage_read(self, pin):
-        print("KFI_GUI: Trying to toggle voltage read on pin ", pin)
-        self.controller.toggle_voltage_read(1)
-        # self.amps_box_relay3.setText("{}".format(voltage))
+    # def toggle_voltage_read(self, pin):
+    #     print("KFI_GUI: Trying to toggle voltage read on pin ", pin)
+    #     self.controller.toggle_voltage_read(1)
+    #     # self.amps_box_relay3.setText("{}".format(voltage))
 
-    def update_volts_boxes(self, volts_list):
-        self.amps_box_relay1.setText("{}".format(volts_list[1]))
-        self.amps_box_relay3.setText("{}".format(volts_list[3]))
+    # def update_volts_boxes(self, volts_list):
+    #     self.amps_box_relay1.setText("{}".format(volts_list[1]))
+    #     self.amps_box_relay3.setText("{}".format(volts_list[3]))
             
