@@ -1,4 +1,4 @@
 {
-    "use_arduino": false,
+    "use_arduino": true,
     "arduino_port": "/dev/ttyACM0"
 }
