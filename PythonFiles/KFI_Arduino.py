@@ -33,9 +33,9 @@ class KFI_Arduino:
         print(f"Sent: {message.strip()}")
         response = None
 
-        with self.thread_lock:
-            self.arduino.write(message.encode())  # Send data to Arduino
-            response = self.arduino.readline().decode().strip()
+        # with self.thread_lock:
+        #     self.arduino.write(message.encode())  # Send data to Arduino
+        #     response = self.arduino.readline().decode().strip()
         
         # Read response from Arduino
         if response:
