@@ -14,9 +14,9 @@ void setup() {
     digitalWrite(pins[i], LOW);
   }
 
-  for (int i = 0; i < 12; i++) {
-    pinMode(inpin[i], INPUT);
-  }
+  // for (int i = 0; i < 12; i++) {
+  //   pinMode(inpin[i], INPUT);
+  // }
 
 }
 
