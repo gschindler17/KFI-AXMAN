@@ -1,4 +1,4 @@
-const int pins[] = {33,32,31,30,29,28,27,26,25,24,23,22};  // 12 pins
+const int pins[] = {33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22};  // 12 pins
 const int inpin[] = {22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33};
 
 const int pinCount = 12;
@@ -48,6 +48,9 @@ void loop() {
           if (pins[i] == pin) {
               validPin = true;
               digitalWrite(pin, state == "HIGH" ? HIGH : LOW);
+              Serial.print(pin)
+              Serial.print(state)
+              Serial.println();  // End response
               break;
           }
       }
@@ -55,16 +58,5 @@ void loop() {
 
   }
 
-  // bool temp = false;
-  // for (int i = 0; i < 12; i++) {
-  //   in_vals[i] = digitalRead(pin);
-  // }
 
-  // // Send array as a comma-separated string
-  // for (int i = 0; i < numPins; i++) {
-  //   Serial.print(pinStates[i]);
-  //   if (i < numPins - 1) {
-  //       Serial.print(",");  // Add comma between values
-  //   }
-  // }
 }

@@ -14,8 +14,7 @@ class KFI_Arduino:
         
         self.thread_lock = threading.Lock() #Prevents simultaneous writes
         
-        # Set a timeout for 5 seconds
-        self.arduino.timeout = 5  
+        
         time.sleep(0.05)
 
 
