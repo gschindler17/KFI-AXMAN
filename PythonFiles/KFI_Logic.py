@@ -37,11 +37,6 @@ class KFI_Logic:
             False, False, False, False
             ]
 
-
-        # List of all threads active or inactive
-        self.thread1 = threading.Thread(target= lambda: self.read_voltage(1), daemon=True )
-        self.thread2 = None
-
     # Getting configuration data for the logic; only done on initialization
     def get_config_data(self):
         try:
@@ -145,13 +140,13 @@ class KFI_Logic:
 
         # print(self.output_pin_states)
 
-    def READ_ALL_INPUTS(self):
-        if (self.use_arduino):
-            print("Logic: READ_ALL_INPUTS")
-            self.input_pin_states = self.arduino_object.READ_ALL_INPUTS()
-        else:
-            print("KFI_Logic: reading all inputs")
-            print("\nKFI_Logic: No arduino in use, check config file.\n")
+    # def READ_ALL_INPUTS(self):
+    #     if (self.use_arduino):
+    #         print("Logic: READ_ALL_INPUTS")
+    #         self.input_pin_states = self.arduino_object.READ_ALL_INPUTS()
+    #     else:
+    #         print("KFI_Logic: reading all inputs")
+    #         print("\nKFI_Logic: No arduino in use, check config file.\n")
         
     
 
