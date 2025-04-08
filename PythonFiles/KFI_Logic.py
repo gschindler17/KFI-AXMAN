@@ -17,9 +17,7 @@ class KFI_Logic:
         self.arduino_port = None
         self.get_config_data()
 
-        if self.use_arduino == True:
-            # Initialize the serial connection to Arduino (adjust the port as needed)
-            self.arduino_object = KFI_Arduino(self.arduino_port, 9600)
+        
 
         # relay1_wire matches with first index, relay2_wire matches with second, etc.
         self.relay_wires = [False, False, False, False]
@@ -74,52 +72,6 @@ class KFI_Logic:
         else:
             return "rgb(255, 0, 0)"    
     
-    # def submit_volts(self, relay_id, text):
-    #     self.relay_volts[relay_id] = text
-    #     print(f"Logic: New relay {relay_id} value {text} volts")
-
-    # def toggle_voltage_read(self, voltage_num):
-    #     if (self.voltage_toggles[voltage_num] == True):
-    #         self.voltage_toggles[voltage_num] = False
-    #         print("KFI_Logic: Toggled {} voltage reader to off".format(voltage_num))
-    #     else:
-    #         self.voltage_toggles[voltage_num] = True
-    #         self.thread1 = threading.Thread(target= lambda: self.read_voltage(voltage_num), daemon=True )
-    #         self.thread1.start()
-    #         print("KFI_Logic: Toggled on {} voltage reader".format(voltage_num))
-    
-    # def read_voltage(self, pin, baudrate=9600, interval=0.2):
-        
-    #     if (self.use_arduino):
-    #         try:
-    #             while (self.voltage_toggles[pin]):
-    #                 with serial.Serial(self.arduino_port, baudrate, timeout=0.5) as ser:
-    #                     time.sleep(0.25)  # Allow time for serial connection to initialize
-    #                     if ser.in_waiting > 0:
-    #                         voltage = ser.readline().decode().strip()
-    #                         # print(f"Voltage: {voltage} V for pin {pin}")
-
-    #                         time.sleep(interval)
-    #                         return voltage
-
-    #         except serial.SerialException as e:
-    #             print(f"Error: {e}")
-    #             return 999
-        
-    #     else:
-    #         # TODO Use a config file
-    #         # Version for PC Only
-    #         count = 0
-    #         while (self.voltage_toggles[pin]):
-    #             time.sleep(1)
-    #             # print("KFI_Logic: Pin {} sleeping...".format(pin))
-    #             count = count + 1
-    #             self.relay_volts[pin] = count
-    #             print("KFI_Logic: self.relay_volts = ", count)
-    #             pass
-
-    # def get_relay_volts(self):
-    #     return self.relay_volts
     
     def get_pin_status(self, pinNum):
         return self.output_pin_states[pinNum]
@@ -139,6 +91,12 @@ class KFI_Logic:
             self.output_pin_states[pin] == True
 
         # print(self.output_pin_states)
+
+    def setup_Arduino(self):
+        if self.use_arduino == True:
+            # Initialize the serial connection to Arduino (adjust the port as needed)
+            self.arduino_object = KFI_Arduino(self.arduino_port, 9600)
+
 
     def READ_ALL_INPUTS(self):
         if (self.use_arduino):

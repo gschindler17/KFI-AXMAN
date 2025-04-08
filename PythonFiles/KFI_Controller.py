@@ -66,6 +66,7 @@ class KFI_Controller:
                 self.output_pins[i] = False
 
     def READ_ALL_INPUTS(self):
+        self.logic.setup_Arduino()
         while(self.taking_input_bool):
             self.check_if_output_toggle()
             self.logic.READ_ALL_INPUTS()
