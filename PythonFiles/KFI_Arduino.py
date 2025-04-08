@@ -12,7 +12,7 @@ class KFI_Arduino:
         self.input_pin_nums = [53,52,51,50,49,48,47,46,45,44,43,42,41]
         self.arduino = serial.Serial(comm_type, port_num, timeout=1)
         
-        self.thread_lock = threading.Lock() #Prevents simultaneous writes
+        # self.thread_lock = threading.Lock() #Prevents simultaneous writes
         
         
         time.sleep(0.05)
@@ -33,9 +33,9 @@ class KFI_Arduino:
         print(f"Sent: {message.strip()}")
         response = None
 
-        with self.thread_lock:
-            self.arduino.write(message.encode())  # Send data to Arduino
-            response = self.arduino.readline().decode().strip()
+        # with self.thread_lock:
+        self.arduino.write(message.encode())  # Send data to Arduino
+        response = self.arduino.readline().decode().strip()
         
         # Read response from Arduino
         if response:
