@@ -46,10 +46,10 @@ class KFI_Arduino:
     # SHOULD RETURN AN ARRAY OF BOOLEANS
     def READ_ALL_INPUTS(self):
         
-        with self.thread_lock:
-            self.arduino.write(b'READ\n')  # 0xA0: Custom command to request a pin reading
-            response = self.arduino.readline().decode().strip()
-            print("KFI_Arduino: Completed read all inputs:", response)
+        # with self.thread_lock:
+        #     self.arduino.write(b'READ\n')  # 0xA0: Custom command to request a pin reading
+        #     response = self.arduino.readline().decode().strip()
+        #     print("KFI_Arduino: Completed read all inputs:", response)
 
             return [
                 True, True, True, True, 
