@@ -8,6 +8,12 @@ class KFI_Controller:
         self.logic = logic
         print("Controller Initialized")
 
+        self.output_pins = [
+            False, False, False, False, 
+            False, False, False, False, 
+            False, False, False, False
+            ]
+
         # Passive thread to handle updating the voltage
         self.taking_input_bool = True
         self.input_delay = 2
@@ -34,7 +40,8 @@ class KFI_Controller:
         print("Controller: Relay {} clicked; sent to processing".format(relay_id))
 
     def toggle_output_pin(self, pin):
-        self.logic.toggle_output_pin(pin)
+        self.output_pins[pin] = True
+        # self.logic.toggle_output_pin(pin)
 
     def handle_out_click(self, out_id):
         result =  self.logic.process_out_action(out_id)
@@ -50,8 +57,16 @@ class KFI_Controller:
         print('Controller: in_{} clicked'.format(in_id))
 
 
+    def check_if_output_toggle(self):
+        for i in enumerate(self.output_pins):
+            if self.output_pins[i]:
+                print("KFI_Controller: Trying to toggle pin at index", i)
+                self.logic.toggle_output_pin(i)
+                self.output_pins[i] = False
+
     def READ_ALL_INPUTS(self):
-        # while(self.taking_input_bool):
-        #     self.logic.READ_ALL_INPUTS()
-        #     time.sleep(self.input_delay)
+        while(self.taking_input_bool):
+            self.check_if_output_toggle()
+            self.logic.READ_ALL_INPUTS()
+            time.sleep(self.input_delay)
         pass
