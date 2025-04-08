@@ -11,9 +11,9 @@ class KFI_Controller:
         # Passive thread to handle updating the voltage
         self.taking_input_bool = True
         self.input_delay = 2
-        # thread = threading.Thread(target= lambda: self.READ_ALL_INPUTS(), daemon=True)
-        # thread.daemon = True
-        # thread.start()
+        thread = threading.Thread(target= lambda: self.READ_ALL_INPUTS(), daemon=True)
+        thread.daemon = True
+        thread.start()
 
 
     def handle_button_click(self, button_id):
@@ -49,7 +49,7 @@ class KFI_Controller:
         print('Controller: in_{} clicked'.format(in_id))
 
 
-    # def READ_ALL_INPUTS(self):
-    #     while(self.taking_input_bool):
-    #         self.logic.READ_ALL_INPUTS()
-    #         time.sleep(self.input_delay)
+    def READ_ALL_INPUTS(self):
+        while(self.taking_input_bool):
+            self.logic.READ_ALL_INPUTS()
+            time.sleep(self.input_delay)
