@@ -51,6 +51,7 @@ class KFI_Controller:
 
 
     def READ_ALL_INPUTS(self):
-        while(self.taking_input_bool):
-            self.logic.READ_ALL_INPUTS()
-            time.sleep(self.input_delay)
+        # while(self.taking_input_bool):
+        #     self.logic.READ_ALL_INPUTS()
+        #     time.sleep(self.input_delay)
+        pass
