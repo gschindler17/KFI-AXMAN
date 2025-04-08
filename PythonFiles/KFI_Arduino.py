@@ -20,36 +20,37 @@ class KFI_Arduino:
 
     #Function to toggle pin and update label
     def toggle_output_pin(self, pin, bool_state):
-        with self.thread_lock:
-            if self.pin_nums[pin] not in self.pin_nums or bool_state not in [True, False]:
-                print("Invalid pin or state")
-                print("\nPin: ", pin, " State:", bool_state, "\n")
-                return
+        # with self.thread_lock:
+        #     if self.pin_nums[pin] not in self.pin_nums or bool_state not in [True, False]:
+        #         print("Invalid pin or state")
+        #         print("\nPin: ", pin, " State:", bool_state, "\n")
+        #         return
             
-            state_set = "LOW"
-            if bool_state:
-                state_set = "HIGH"
+        #     state_set = "LOW"
+        #     if bool_state:
+        #         state_set = "HIGH"
 
-            message = f"{self.pin_nums[pin]},{state_set}\n"
-            print(f"Sent: {message.strip()}")
-            response = None
+        #     message = f"{self.pin_nums[pin]},{state_set}\n"
+        #     print(f"Sent: {message.strip()}")
+        #     response = None
 
             
-            self.arduino.write(message.encode())  # Send data to Arduino
-            response = self.arduino.readline().decode().strip()
+        #     self.arduino.write(message.encode())  # Send data to Arduino
+        #     response = self.arduino.readline().decode().strip()
             
-            # Read response from Arduino
-            if response:
-                print(f"Arduino Response: {response}")
+        #     # Read response from Arduino
+        #     if response:
+        #         print(f"Arduino Response: {response}")
+        pass
         
     
     # SHOULD RETURN AN ARRAY OF BOOLEANS
     def READ_ALL_INPUTS(self):
         
-        # with self.thread_lock:
-        #     self.arduino.write(b'READ\n')  # 0xA0: Custom command to request a pin reading
-        #     response = self.arduino.readline().decode().strip()
-        #     print("KFI_Arduino: Completed read all inputs:", response)
+        with self.thread_lock:
+            self.arduino.write(b'READ\n')  # 0xA0: Custom command to request a pin reading
+            response = self.arduino.readline().decode().strip()
+            print("KFI_Arduino: Completed read all inputs:", response)
 
             return [
                 True, True, True, True, 
