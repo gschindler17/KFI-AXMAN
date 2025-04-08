@@ -59,7 +59,7 @@ class KFI_Controller:
 
 
     def check_if_output_toggle(self):
-        for i in enumerate(self.output_pins):
+        for i, val in enumerate(self.output_pins):
             if self.output_pins[i]:
                 print("KFI_Controller: Trying to toggle pin at index", i)
                 self.logic.toggle_output_pin(i)
