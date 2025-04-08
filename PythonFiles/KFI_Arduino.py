@@ -49,6 +49,7 @@ class KFI_Arduino:
         
         with self.thread_lock:
             message = "READ\n"
+            message.strip()
             response = None
             self.arduino.write(message.encode())  # 0xA0: Custom command to request a pin reading
             response = self.arduino.readline().decode().strip()
