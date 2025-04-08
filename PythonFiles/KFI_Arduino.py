@@ -57,7 +57,8 @@ class KFI_Arduino:
             
             if response:
                 print("KFI_Arduino: Completed read all inputs:", response)
-
+            else:
+                print('no response :/')
             return [
                 True, True, True, True, 
                 True, True, True, True, 
