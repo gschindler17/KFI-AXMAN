@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1014</width>
-    <height>675</height>
+    <width>1026</width>
+    <height>749</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -191,97 +191,6 @@
      <string>Power Test Station</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="in_text1">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>30</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text2">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>80</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text3">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>130</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text4">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>180</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text5">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>230</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text6">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>280</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text7">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>330</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="bind_subtitle_label">
     <property name="geometry">
      <rect>
@@ -300,75 +209,10 @@
      <string>Bind to output:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="in_text10">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>480</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text9">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>430</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text8">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>380</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text12">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>580</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="in_text11">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>530</y>
-      <width>51</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="out_3">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>130</y>
       <width>51</width>
       <height>41</height>
@@ -381,7 +225,7 @@
    <widget class="QPushButton" name="out_8">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>380</y>
       <width>51</width>
       <height>41</height>
@@ -394,7 +238,7 @@
    <widget class="QPushButton" name="out_11">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>530</y>
       <width>51</width>
       <height>41</height>
@@ -407,7 +251,7 @@
    <widget class="QPushButton" name="out_10">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>480</y>
       <width>51</width>
       <height>41</height>
@@ -420,7 +264,7 @@
    <widget class="QPushButton" name="out_1">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>30</y>
       <width>51</width>
       <height>41</height>
@@ -436,7 +280,7 @@
    <widget class="QPushButton" name="out_4">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>180</y>
       <width>51</width>
       <height>41</height>
@@ -449,7 +293,7 @@
    <widget class="QPushButton" name="out_7">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>330</y>
       <width>51</width>
       <height>41</height>
@@ -462,7 +306,7 @@
    <widget class="QPushButton" name="out_9">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>430</y>
       <width>51</width>
       <height>41</height>
@@ -475,7 +319,7 @@
    <widget class="QPushButton" name="out_12">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>580</y>
       <width>51</width>
       <height>41</height>
@@ -488,7 +332,7 @@
    <widget class="QPushButton" name="out_2">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>80</y>
       <width>51</width>
       <height>41</height>
@@ -501,7 +345,7 @@
    <widget class="QPushButton" name="out_5">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>230</y>
       <width>51</width>
       <height>41</height>
@@ -514,7 +358,7 @@
    <widget class="QPushButton" name="out_6">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>80</x>
       <y>280</y>
       <width>51</width>
       <height>41</height>
@@ -527,8 +371,8 @@
    <widget class="QPushButton" name="relay_1">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>180</y>
+      <x>640</x>
+      <y>70</y>
       <width>93</width>
       <height>81</height>
      </rect>
@@ -543,8 +387,8 @@
    <widget class="QPushButton" name="relay_3">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>180</y>
+      <x>810</x>
+      <y>70</y>
       <width>91</width>
       <height>81</height>
      </rect>
@@ -556,8 +400,8 @@
    <widget class="QPushButton" name="relay_2">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>340</y>
+      <x>700</x>
+      <y>230</y>
       <width>93</width>
       <height>81</height>
      </rect>
@@ -569,8 +413,8 @@
    <widget class="QLabel" name="line_relay2_1">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>260</y>
+      <x>680</x>
+      <y>150</y>
       <width>4</width>
       <height>41</height>
      </rect>
@@ -585,8 +429,8 @@
    <widget class="QLabel" name="line_relay3_5">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>260</y>
+      <x>850</x>
+      <y>150</y>
       <width>4</width>
       <height>41</height>
      </rect>
@@ -601,8 +445,8 @@
    <widget class="QLabel" name="line_relay3_1">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>420</y>
+      <x>740</x>
+      <y>310</y>
       <width>4</width>
       <height>41</height>
      </rect>
@@ -617,8 +461,8 @@
    <widget class="QLabel" name="line_relay2_2">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>300</y>
+      <x>630</x>
+      <y>190</y>
       <width>111</width>
       <height>4</height>
      </rect>
@@ -633,8 +477,8 @@
    <widget class="QLabel" name="line_relay3_2">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>460</y>
+      <x>720</x>
+      <y>350</y>
       <width>151</width>
       <height>4</height>
      </rect>
@@ -649,8 +493,8 @@
    <widget class="QLabel" name="line_relay3_4">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>300</y>
+      <x>800</x>
+      <y>190</y>
       <width>151</width>
       <height>4</height>
      </rect>
@@ -665,8 +509,8 @@
    <widget class="QLabel" name="line_relay3_3">
     <property name="geometry">
      <rect>
-      <x>614</x>
-      <y>300</y>
+      <x>814</x>
+      <y>190</y>
       <width>4</width>
       <height>161</height>
      </rect>
@@ -681,8 +525,8 @@
    <widget class="QLabel" name="bus1_label">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>310</y>
+      <x>620</x>
+      <y>200</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -694,8 +538,8 @@
    <widget class="QLabel" name="line_relay2_3">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>300</y>
+      <x>740</x>
+      <y>190</y>
       <width>4</width>
       <height>41</height>
      </rect>
@@ -710,8 +554,8 @@
    <widget class="QLabel" name="bus2_label">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>270</y>
+      <x>890</x>
+      <y>160</y>
       <width>55</width>
       <height>16</height>
      </rect>
@@ -723,8 +567,8 @@
    <widget class="QLabel" name="line_relay1_1">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>140</y>
+      <x>680</x>
+      <y>30</y>
       <width>4</width>
       <height>41</height>
      </rect>
@@ -739,8 +583,8 @@
    <widget class="QLabel" name="line_relay4_1">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>140</y>
+      <x>860</x>
+      <y>30</y>
       <width>4</width>
       <height>41</height>
      </rect>
@@ -755,8 +599,8 @@
    <widget class="QLineEdit" name="volts_box_relay3">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>190</y>
+      <x>950</x>
+      <y>80</y>
       <width>71</width>
       <height>22</height>
      </rect>
@@ -765,8 +609,8 @@
    <widget class="QLineEdit" name="amps_box_relay3">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>230</y>
+      <x>950</x>
+      <y>120</y>
       <width>71</width>
       <height>22</height>
      </rect>
@@ -775,8 +619,8 @@
    <widget class="QLineEdit" name="volts_box_relay2">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>350</y>
+      <x>610</x>
+      <y>240</y>
       <width>71</width>
       <height>22</height>
      </rect>
@@ -785,8 +629,8 @@
    <widget class="QLineEdit" name="amps_box_relay2">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>390</y>
+      <x>610</x>
+      <y>280</y>
       <width>71</width>
       <height>22</height>
      </rect>
@@ -795,8 +639,8 @@
    <widget class="QLineEdit" name="volts_box_relay1">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>190</y>
+      <x>540</x>
+      <y>80</y>
       <width>71</width>
       <height>22</height>
      </rect>
@@ -805,8 +649,8 @@
    <widget class="QLineEdit" name="amps_box_relay1">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>230</y>
+      <x>540</x>
+      <y>120</y>
       <width>71</width>
       <height>22</height>
      </rect>
@@ -815,8 +659,8 @@
    <widget class="QLabel" name="volts_label1">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>190</y>
+      <x>500</x>
+      <y>80</y>
       <width>41</width>
       <height>16</height>
      </rect>
@@ -828,8 +672,8 @@
    <widget class="QLabel" name="volts_label3">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>190</y>
+      <x>910</x>
+      <y>80</y>
       <width>41</width>
       <height>16</height>
      </rect>
@@ -841,8 +685,8 @@
    <widget class="QLabel" name="volts_label2">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>350</y>
+      <x>570</x>
+      <y>240</y>
       <width>41</width>
       <height>16</height>
      </rect>
@@ -854,8 +698,8 @@
    <widget class="QLabel" name="amps_label1">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>230</y>
+      <x>500</x>
+      <y>120</y>
       <width>41</width>
       <height>16</height>
      </rect>
@@ -867,8 +711,8 @@
    <widget class="QLabel" name="amps_label2">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>390</y>
+      <x>570</x>
+      <y>280</y>
       <width>41</width>
       <height>16</height>
      </rect>
@@ -880,8 +724,8 @@
    <widget class="QLabel" name="amps_label3">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>230</y>
+      <x>910</x>
+      <y>120</y>
       <width>41</width>
       <height>16</height>
      </rect>
@@ -890,53 +734,45 @@
      <string>Amps:</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QPushButton" name="confirmButton">
     <property name="geometry">
      <rect>
-      <x>770</x>
-      <y>510</y>
-      <width>91</width>
-      <height>51</height>
+      <x>280</x>
+      <y>640</y>
+      <width>93</width>
+      <height>28</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">QCheckBox::indicator {
-    width: 44px;
-    height: 24px;
-    border-radius: 12px;
-    background-color: #888; /* Default off state color */
-}
-
-QCheckBox::indicator:checked {
-    background-color: #090; /* Default on state color */
-}
-
-QCheckBox::indicator:unchecked {
-    background-color: #888; /* Default off state color */
-}
-
-QCheckBox::indicator:checked {
-    position: relative;
-    left: 0px;
-}
-
-QCheckBox::indicator:unchecked {
-    position: relative;
-    left: 0px;
-}
-
-QCheckBox::indicator {
-    border: none;
-    margin: 0px;
-}
-
-QCheckBox {
-    background-color:transparent;
-    spacing: 10px;
-}</string>
+    <property name="text">
+     <string>Confirm</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="boolInput">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>640</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>640</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
     </property>
     <property name="text">
-     <string>In 1</string>
+     <string>Input Logic:</string>
     </property>
    </widget>
   </widget>
@@ -945,7 +781,7 @@ QCheckBox {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1014</width>
+     <width>1026</width>
      <height>26</height>
     </rect>
    </property>

@@ -19,6 +19,7 @@ class KFI_GUI(QMainWindow):
         self.volts_box_relay1.returnPressed.connect(lambda: self.controller.submit_volts(1, self.volts_box_relay1.text()))
         self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
         self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
+        self.confirmButton.clicked.connect(lambda: self.update_line)
         
         # self.in_1.clicked.connect(lambda: self.toggle_voltage_read(1))
         
@@ -139,31 +140,8 @@ class KFI_GUI(QMainWindow):
         if(button == 11):
             self.out_12.setStyleSheet("border: 2px solid {};".format(rgb_string))
 
-    def update_line(self, line_id, text):
-        if (line_id == 1):
-            self.in_text1.setText(text)
-        if (line_id == 2):
-            self.in_text2.setText(text)
-        if (line_id == 3):
-            self.in_text3.setText(text)
-        if (line_id == 4):
-            self.in_text4.setText(text)
-        if (line_id == 5):
-            self.in_text5.setText(text)
-        if (line_id == 6):
-            self.in_text6.setText(text)
-        if (line_id == 7):
-            self.in_text7.setText(text)
-        if (line_id == 8):
-            self.in_text8.setText(text)
-        if (line_id == 9):
-            self.in_text9.setText(text)
-        if (line_id == 10):
-            self.in_text10.setText(text)
-        if (line_id == 11):
-            self.in_text11.setText(text) 
-        if (line_id == 12):
-            self.in_text12.setText(text)   
+    def update_line(self):
+        self.controller.submit_bool_logic(self.boolInput.text())
     
     def update_inputs(self, inputpins):
         if inputpins[0] == 1:

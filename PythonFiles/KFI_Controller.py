@@ -73,3 +73,6 @@ class KFI_Controller:
             self.gui.update_inputs(input_states)
             time.sleep(self.input_delay)
         pass
+    
+    def submit_bool_logic(self, expression):
+        pass
