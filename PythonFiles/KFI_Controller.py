@@ -69,6 +69,7 @@ class KFI_Controller:
         self.logic.setup_Arduino()
         while(self.taking_input_bool):
             self.check_if_output_toggle()
-            self.logic.READ_ALL_INPUTS()
+            input_states = self.logic.READ_ALL_INPUTS()
+            self.gui.update_inputs(input_states)
             time.sleep(self.input_delay)
         pass

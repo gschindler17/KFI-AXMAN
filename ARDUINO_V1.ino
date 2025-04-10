@@ -25,7 +25,7 @@ void loop() {
     String received = Serial.readStringUntil('\n'); // Read incoming data
     received.trim(); // Remove extra spaces or newlines
 
-    Serial.print(received);
+    // Serial.print(received);
 
     if (received == "READ") {  
       // Send input pin states as "1,0,1,0"
