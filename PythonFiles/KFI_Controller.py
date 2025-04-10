@@ -75,4 +75,4 @@ class KFI_Controller:
         pass
     
     def submit_bool_logic(self, expression):
-        pass
+        print(expression)
