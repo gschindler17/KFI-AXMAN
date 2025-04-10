@@ -85,6 +85,7 @@ class KFI_GUI(QMainWindow):
         self.controller = controller
         
     def update_line(self):
+        self.expression = self.boolInput.text()
         self.controller.submit_bool_logic(self.expression)
             
     # GUI method
