@@ -21,7 +21,7 @@ class KFI_GUI(QMainWindow):
         self.volts_box_relay1.returnPressed.connect(lambda: self.controller.submit_volts(1, self.volts_box_relay1.text()))
         self.volts_box_relay2.returnPressed.connect(lambda: self.controller.submit_volts(2, self.volts_box_relay2.text()))
         self.volts_box_relay3.returnPressed.connect(lambda: self.controller.submit_volts(3, self.volts_box_relay3.text()))
-        self.confirmButton.clicked.connect(lambda: self.update_line(self.expression))
+        self.confirmButton.clicked.connect(self.update_line)
         
         # self.in_1.clicked.connect(lambda: self.toggle_voltage_read(1))
         
