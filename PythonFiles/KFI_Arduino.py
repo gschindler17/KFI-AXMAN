@@ -58,8 +58,11 @@ class KFI_Arduino:
             if response:
                 print("KFI_Arduino: Completed read all inputs:", response)
 
-            return_list = list(map(int, response.split(',')))
-
+            return_list = [0,0,0,0,0,0,0,0,0,0,0,0]
+            try:
+                return_list = list(map(int, response.split(',')))
+            except:
+                print("KFI_Arduino: Unformattable input from the Arduino")
 
             return return_list
 
