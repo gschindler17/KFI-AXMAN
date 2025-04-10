@@ -82,7 +82,9 @@ class KFI_GUI(QMainWindow):
         print("KFI_GUI: Controller set.")
         self.controller = controller
         
-        
+    def update_line(self):
+        self.controller.submit_bool_logic(self.boolInput.text())
+            
     # GUI method
     def line_relay_color(self, relay_id, rgb_string):
         
@@ -139,9 +141,6 @@ class KFI_GUI(QMainWindow):
             self.out_11.setStyleSheet("border: 2px solid {};".format(rgb_string))
         if(button == 11):
             self.out_12.setStyleSheet("border: 2px solid {};".format(rgb_string))
-
-    def update_line(self):
-        self.controller.submit_bool_logic(self.boolInput.text())
     
     def update_inputs(self, inputpins):
         if inputpins[0] == 1:
