@@ -9,6 +9,8 @@ class KFI_GUI(QMainWindow):
         super().__init__()
         uic.loadUi("FrontEnd.ui", self)  # Load the UI file
 
+        self.expression = self.boolInput.text()
+
         # Access the button by its object name from Qt Designer
         self.relay_1.clicked.connect(lambda: self.controller.handle_relay_click(1))
         self.relay_1.setStyleSheet("border: 2px solid red;")
@@ -83,7 +85,7 @@ class KFI_GUI(QMainWindow):
         self.controller = controller
         
     def update_line(self):
-        self.controller.submit_bool_logic(self.boolInput.text())
+        self.controller.submit_bool_logic(self.expression)
             
     # GUI method
     def line_relay_color(self, relay_id, rgb_string):
