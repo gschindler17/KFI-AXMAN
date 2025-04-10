@@ -56,7 +56,7 @@ class KFI_Arduino:
             response = self.arduino.readline().decode().strip()
             
             if response:
-                print("KFI_Arduino: Completed read all inputs:", response)
+                print(f"KFI_Arduino: Completed read all inputs: _{response.strip()}_")
 
             return_list = [0,0,0,0,0,0,0,0,0,0,0,0]
             try:
