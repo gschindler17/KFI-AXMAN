@@ -167,53 +167,53 @@ class KFI_GUI(QMainWindow):
     
     def update_inputs(self, inputpins):
         if inputpins[0] == 1:
-            self.in_1.setStylesheet('border: 2px solid green;')
+            self.in_1.setStyleSheet('border: 2px solid green;')
         elif inputpins[0] != 1:
-            self.in_1.setStylesheet('border: 2px solid red;')
+            self.in_1.setStyleSheet('border: 2px solid red;')
         if inputpins[1] == 1:
-            self.in_2.setStylesheet('border: 2px solid green;')
+            self.in_2.setStyleSheet('border: 2px solid green;')
         elif inputpins[1] != 1:
-            self.in_2.setStylesheet('border: 2px solid red;')
+            self.in_2.setStyleSheet('border: 2px solid red;')
         if inputpins[2] == 1:
-            self.in_3.setStylesheet('border: 2px solid green;')
+            self.in_3.setStyleSheet('border: 2px solid green;')
         elif inputpins[2] != 1:
-            self.in_3.setStylesheet('border: 2px solid red;')
+            self.in_3.setStyleSheet('border: 2px solid red;')
         if inputpins[3] == 1:
-            self.in_4.setStylesheet('border: 2px solid green;')
+            self.in_4.setStyleSheet('border: 2px solid green;')
         elif inputpins[3] != 1:
-            self.in_4.setStylesheet('border: 2px solid red;')
+            self.in_4.setStyleSheet('border: 2px solid red;')
         if inputpins[4] == 1:
-            self.in_5.setStylesheet('border: 2px solid green;')
+            self.in_5.setStyleSheet('border: 2px solid green;')
         elif inputpins[4] != 1:
-            self.in_5.setStylesheet('border: 2px solid red;')
+            self.in_5.setStyleSheet('border: 2px solid red;')
         if inputpins[5] == 1:
-            self.in_6.setStylesheet('border: 2px solid green;')
+            self.in_6.setStyleSheet('border: 2px solid green;')
         elif inputpins[5] != 1:
-            self.in_6.setStylesheet('border: 2px solid red;')
+            self.in_6.setStyleSheet('border: 2px solid red;')
         if inputpins[6] == 1:
-            self.in_7.setStylesheet('border: 2px solid green;')
+            self.in_7.setStyleSheet('border: 2px solid green;')
         elif inputpins[6] != 1:
-            self.in_7.setStylesheet('border: 2px solid red;')
+            self.in_7.setStyleSheet('border: 2px solid red;')
         if inputpins[7] == 1:
-            self.in_8.setStylesheet('border: 2px solid green;')
+            self.in_8.setStyleSheet('border: 2px solid green;')
         elif inputpins[7] != 1:
-            self.in_8.setStylesheet('border: 2px solid red;')
+            self.in_8.setStyleSheet('border: 2px solid red;')
         if inputpins[8] == 1:
-            self.in_9.setStylesheet('border: 2px solid green;')
+            self.in_9.setStyleSheet('border: 2px solid green;')
         elif inputpins[8] != 1:
-            self.in_9.setStylesheet('border: 2px solid red;')
+            self.in_9.setStyleSheet('border: 2px solid red;')
         if inputpins[9] == 1:
-            self.in_10.setStylesheet('border: 2px solid green;')
+            self.in_10.setStyleSheet('border: 2px solid green;')
         elif inputpins[9] != 1:
-            self.in_10.setStylesheet('border: 2px solid red;')
+            self.in_10.setStyleSheet('border: 2px solid red;')
         if inputpins[10] == 1:
-            self.in_11.setStylesheet('border: 2px solid green;')
+            self.in_11.setStyleSheet('border: 2px solid green;')
         elif inputpins[10] != 1:
-            self.in_11.setStylesheet('border: 2px solid red;')
+            self.in_11.setStyleSheet('border: 2px solid red;')
         if inputpins[11] == 1:
-            self.in_12.setStylesheet('border: 2px solid green;')
+            self.in_12.setStyleSheet('border: 2px solid green;')
         elif inputpins[11] != 1:
-            self.in_12.setStylesheet('border: 2px solid red;')
+            self.in_12.setStyleSheet('border: 2px solid red;')
                
             
     # def toggle_voltage_read(self, pin):
