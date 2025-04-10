@@ -16,7 +16,7 @@ class KFI_Controller:
 
         # Passive thread to handle updating the voltage
         self.taking_input_bool = True
-        self.input_delay = 2.5
+        self.input_delay = 0.01
         thread = threading.Thread(target= lambda: self.READ_ALL_INPUTS(), daemon=True)
         thread.daemon = True
         thread.start()
@@ -73,3 +73,6 @@ class KFI_Controller:
             self.gui.update_inputs(input_states)
             time.sleep(self.input_delay)
         pass
+    
+    def submit_bool_logic(self, expression):
+        print(expression)
