@@ -83,7 +83,7 @@ class KFI_GUI(QMainWindow):
         
     def update_line(self):
         
-        self.controller.submit_bool_logic(self.boolInput.text())
+        self.controller.submit_bool_logic(self.boolInput.toPlainText())
             
     # GUI method
     def line_relay_color(self, relay_id, rgb_string):
