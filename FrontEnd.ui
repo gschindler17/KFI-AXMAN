@@ -747,16 +747,6 @@
      <string>Confirm</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="boolInput">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>640</y>
-      <width>211</width>
-      <height>81</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -773,6 +763,16 @@
     </property>
     <property name="text">
      <string>Input Logic:</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="boolInput">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>646</y>
+      <width>231</width>
+      <height>71</height>
+     </rect>
     </property>
    </widget>
   </widget>
