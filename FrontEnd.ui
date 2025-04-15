@@ -367,14 +367,14 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>40</y>
-      <width>91</width>
-      <height>31</height>
+      <y>30</y>
+      <width>131</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -389,6 +389,11 @@
       <width>271</width>
       <height>191</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QLineEdit" name="textFileInput">
@@ -406,13 +411,13 @@
      <rect>
       <x>420</x>
       <y>350</y>
-      <width>131</width>
-      <height>16</height>
+      <width>171</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
