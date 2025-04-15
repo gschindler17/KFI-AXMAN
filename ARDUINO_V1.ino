@@ -1,5 +1,5 @@
-const int pins[] = {33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22};  // 12 pins
-const int inpin[] = {53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41};
+const int pins[] = {20,19,18,17,16,15,14,13,12,11,10,9};  // 12 pins
+const int inpin[] = {52,50,48,46,44,42,40,38,36,34,32,28};
 
 const int pinCount = 12;
 bool pinStates[12] = {false};  // Track pin states

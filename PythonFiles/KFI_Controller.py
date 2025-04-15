@@ -76,3 +76,5 @@ class KFI_Controller:
     
     def submit_bool_logic(self, expression):
         print(expression)
+        temp = self.logic.evaluate_logic_code(expression)
+        print(temp)

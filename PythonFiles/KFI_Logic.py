@@ -2,6 +2,7 @@
 import serial
 import time
 import threading
+import re
 import json
 from PythonFiles.KFI_Arduino import KFI_Arduino
 
@@ -109,6 +110,54 @@ class KFI_Logic:
 
         return self.input_pin_states
         
+
+    def evaluate_logic_code(self, code_str, inputs, outputs):
+        inputs = self.input_pin_states
+        outputs = self.output_pin_states
+        
+        new_outputs = outputs.copy()
+        lines = [line.strip() for line in code_str.strip().split(';') if line.strip()]
+
+        for line in lines:
+            if '=' not in line:
+                continue
+
+            lhs, rhs = line.split('=')
+            output_index = int(lhs.strip()) - 13  # 13–24 maps to 0–11
+
+            original_expression = rhs.strip()
+            expression = original_expression
+
+            # Replace NOT (!) with Python's `not`
+            expression = re.sub(r'!', 'not ', expression)
+
+            # Replace logical operators: * → and, + → or
+            expression = expression.replace('*', ' and ')
+            expression = expression.replace('+', ' or ')
+
+            # Replace numbers 1–12 with inputs[x] safely
+            def replace_input_refs(match):
+                num = int(match.group())
+                return f"inputs[{num - 1}]"
+
+            expression = re.sub(r'\b([1-9]|1[0-2])\b', replace_input_refs, expression)
+
+            try:
+                result = bool(eval(expression, {'inputs': inputs}))
+                new_outputs[output_index] = int(result)
+
+                # Debug statements (uncomment to enable)
+                # print(f"[DEBUG] Line: {line}")
+                # print(f"        Raw expression: {original_expression}")
+                # print(f"        Parsed expression: {expression}")
+                # print(f"        Result: {int(result)} → Output {output_index + 13}")
+
+            except Exception as e:
+                print(f"[ERROR] Failed to evaluate line '{line}': {e}")
+
+        self.output_pin_states = new_outputs
+
+        return new_outputs
     
 
 # Example usage (adjust port as needed)
