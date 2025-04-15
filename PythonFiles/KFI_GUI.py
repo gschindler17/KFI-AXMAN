@@ -204,9 +204,14 @@ class KFI_GUI(QMainWindow):
             self.in_12.setStyleSheet('border: 2px solid red;')
       
     def import_text(self): 
+        filepath = self.textFileInput.text()
+        print('getting filepath')
         try:
-            with open(self.textFileInput.text(), 'r', encoding='utf-8') as f:
+            print('opening filepath')
+            with open(filepath, 'r', encoding='utf-8') as f:
+                print('reading file')
                 text = f.read()
+                print('setting text')
                 self.boolInput.setPlainText(text)
         except Exception as e:
                 self.boolInput.setPlainText(f"Failed to read file:\n{str(e)}")        
