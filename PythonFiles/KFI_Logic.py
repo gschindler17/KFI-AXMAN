@@ -151,15 +151,19 @@ class KFI_Logic:
             expression = expression.replace('*', ' and ')
             expression = expression.replace('+', ' or ')
 
-            # Replace numbers 1–12 with inputs[x] safely
-            def replace_input_refs(match):
+            # Replace pin numbers 1–24 with appropriate references
+            def replace_pin_refs(match):
                 num = int(match.group())
-                return f"inputs[{num - 1}]"
+                if 1 <= num <= 12:
+                    return f"inputs[{num - 1}]"
+                elif 13 <= num <= 24:
+                    return f"new_outputs[{num - 13}]"
+                return match.group()
 
-            expression = re.sub(r'\b([1-9]|1[0-2])\b', replace_input_refs, expression)
+            expression = re.sub(r'\b([1-9]|1[0-9]|2[0-4])\b', replace_pin_refs, expression)
 
             try:
-                result = bool(eval(expression, {'inputs': inputs}))
+                result = bool(eval(expression, {'inputs': inputs, 'new_outputs': new_outputs}))
                 new_outputs[output_index] = result
 
             except Exception as e:
@@ -168,6 +172,7 @@ class KFI_Logic:
         self.output_pin_states = new_outputs
 
         return new_outputs
+
 
     
 
