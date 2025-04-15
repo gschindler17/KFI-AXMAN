@@ -111,10 +111,10 @@ class KFI_Logic:
         return self.input_pin_states
         
 
-    def evaluate_logic_code(self, code_str, inputs, outputs):
+    def evaluate_logic_code(self, code_str):
         inputs = self.input_pin_states
         outputs = self.output_pin_states
-        
+
         new_outputs = outputs.copy()
         lines = [line.strip() for line in code_str.strip().split(';') if line.strip()]
 
