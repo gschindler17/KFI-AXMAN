@@ -8,7 +8,7 @@ class KFI_Arduino:
         
         # Creates a serial link to the Arduino
         # How commands are sent
-        self.pin_nums = [33,32,31,30,29,28,27,26,25,24,23,22]
+        self.pin_nums = [20,19,18,17,16,15,14,13,12,11,10,9]
         self.input_pin_nums = [20,19,18,17,16,15,14,13,12,11,10,9]
         self.arduino = serial.Serial(comm_type, port_num, timeout=1)
         
