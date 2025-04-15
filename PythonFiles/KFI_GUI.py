@@ -73,7 +73,7 @@ class KFI_GUI(QMainWindow):
         self.in_12.clicked.connect(lambda:self.controller.handle_in_click(11))
         self.in_12.setStyleSheet("border: 2px solid red;")
         
-        
+        self.importButton.clicked.connect(lambda: self.import_text)
         
     # Controller reference
     def set_controller(self, controller):
@@ -202,7 +202,14 @@ class KFI_GUI(QMainWindow):
             self.in_12.setStyleSheet('border: 2px solid green;')
         elif inputpins[11] != 1:
             self.in_12.setStyleSheet('border: 2px solid red;')
-               
+      
+    def import_text(self): 
+        try:
+            with open(self.textFileInput.text(), 'r', encoding='utf-8') as f:
+                text = f.read()
+                self.boolInput.setPlainText(text)
+        except Exception as e:
+                self.boolInput.setPlainText(f"Failed to read file:\n{str(e)}")        
             
     # def toggle_voltage_read(self, pin):
     #     print("KFI_GUI: Trying to toggle voltage read on pin ", pin)
