@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1026</width>
-    <height>749</height>
+    <height>770</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -209,7 +209,7 @@
      <string>Bind to output:</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_3">
+   <widget class="QPushButton" name="out_15">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -219,10 +219,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 3</string>
+     <string>OUT 15</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_8">
+   <widget class="QPushButton" name="out_20">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -232,10 +232,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 8</string>
+     <string>OUT 20</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_11">
+   <widget class="QPushButton" name="out_23">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -245,10 +245,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 11</string>
+     <string>OUT 23</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_10">
+   <widget class="QPushButton" name="out_22">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -258,10 +258,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 10</string>
+     <string>OUT 22</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_1">
+   <widget class="QPushButton" name="out_13">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -274,10 +274,10 @@
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>OUT 1</string>
+     <string>OUT 13</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_4">
+   <widget class="QPushButton" name="out_16">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -287,10 +287,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 4</string>
+     <string>OUT 16</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_7">
+   <widget class="QPushButton" name="out_19">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -300,10 +300,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 7</string>
+     <string>OUT 19</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_9">
+   <widget class="QPushButton" name="out_21">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -313,10 +313,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 9</string>
+     <string>OUT 21</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_12">
+   <widget class="QPushButton" name="out_24">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -326,10 +326,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 12</string>
+     <string>OUT 24</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_2">
+   <widget class="QPushButton" name="out_14">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -339,10 +339,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 2</string>
+     <string>OUT 14</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_5">
+   <widget class="QPushButton" name="out_17">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -352,10 +352,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 5</string>
+     <string>OUT 17</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="out_6">
+   <widget class="QPushButton" name="out_18">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -365,7 +365,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>OUT 6</string>
+     <string>OUT 18</string>
     </property>
    </widget>
    <widget class="QPushButton" name="relay_1">
@@ -737,7 +737,7 @@
    <widget class="QPushButton" name="confirmButton">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>350</x>
       <y>640</y>
       <width>93</width>
       <height>28</height>
@@ -752,8 +752,8 @@
      <rect>
       <x>120</x>
       <y>640</y>
-      <width>151</width>
-      <height>31</height>
+      <width>211</width>
+      <height>81</height>
      </rect>
     </property>
    </widget>
