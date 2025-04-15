@@ -114,7 +114,7 @@ class KFI_Logic:
         if (self.use_arduino):
             # print("Logic: READ_ALL_INPUTS")
             self.input_pin_states = self.arduino_object.READ_ALL_INPUTS()
-            print(f"KFI_Logic: input pins = {self.input_pin_states}")
+            # print(f"KFI_Logic: input pins = {self.input_pin_states}")
         else:
             print("KFI_Logic: reading all inputs")
             print("\nKFI_Logic: No arduino in use, check config file.\n")
