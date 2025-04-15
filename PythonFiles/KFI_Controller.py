@@ -75,4 +75,9 @@ class KFI_Controller:
     def submit_bool_logic(self, expression):
         print(expression)
         temp = self.logic.evaluate_logic_code(expression)
+        self.gui.update_all_out_buttons(temp)
         print(temp)
+
+    def update_all_out_buttons(self, output_vals):
+        for i, val in enumerate(output_vals): 
+            self.gui.out_button_color(i, val)
