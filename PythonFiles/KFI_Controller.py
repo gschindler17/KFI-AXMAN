@@ -45,7 +45,6 @@ class KFI_Controller:
 
     def handle_out_click(self, out_id):
         result =  self.logic.process_out_action(out_id)
-        self.logic.READ_ALL_INPUTS()
         self.toggle_output_pin(out_id)
         self.gui.out_button_color(out_id, result)
         print("Controller: out_{} clicked".format(out_id))
@@ -54,7 +53,6 @@ class KFI_Controller:
         # result = self.logic.get_input_data(in_id)
         # self.gui_in_button(in_id, result)
         # self.gui.update_line(line_id, result)
-        self.logic.READ_ALL_INPUTS()
         print('Controller: in_{} clicked'.format(in_id))
 
 
