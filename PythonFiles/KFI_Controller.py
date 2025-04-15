@@ -80,4 +80,7 @@ class KFI_Controller:
 
     def update_all_out_buttons(self, output_vals):
         for i, val in enumerate(output_vals): 
-            self.gui.out_button_color(i, val)
+            if val:
+                self.gui.out_button_color(i, "green")
+            else:
+                self.gui.out_button_color(i, "red")
