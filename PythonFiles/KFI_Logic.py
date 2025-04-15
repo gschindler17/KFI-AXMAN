@@ -144,7 +144,7 @@ class KFI_Logic:
 
             try:
                 result = bool(eval(expression, {'inputs': inputs}))
-                new_outputs[output_index] = int(result)
+                new_outputs[output_index] = result
 
                 # Debug statements (uncomment to enable)
                 # print(f"[DEBUG] Line: {line}")
