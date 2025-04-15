@@ -123,6 +123,7 @@ class KFI_Logic:
         
 
     def evaluate_logic_code(self, code_str):
+
         inputs = self.input_pin_states
         outputs = self.output_pin_states
 
@@ -138,6 +139,10 @@ class KFI_Logic:
 
             original_expression = rhs.strip()
             expression = original_expression
+
+            # Replace T and F with True and False
+            expression = re.sub(r'\bT\b', 'True', expression)
+            expression = re.sub(r'\bF\b', 'False', expression)
 
             # Replace NOT (!) with Python's `not`
             expression = re.sub(r'!', 'not ', expression)
@@ -157,18 +162,13 @@ class KFI_Logic:
                 result = bool(eval(expression, {'inputs': inputs}))
                 new_outputs[output_index] = result
 
-                # Debug statements (uncomment to enable)
-                # print(f"[DEBUG] Line: {line}")
-                # print(f"        Raw expression: {original_expression}")
-                # print(f"        Parsed expression: {expression}")
-                # print(f"        Result: {int(result)} → Output {output_index + 13}")
-
             except Exception as e:
                 print(f"[ERROR] Failed to evaluate line '{line}': {e}")
 
         self.output_pin_states = new_outputs
 
         return new_outputs
+
     
 
 # Example usage (adjust port as needed)
