@@ -77,6 +77,17 @@ class KFI_Logic:
     def get_pin_status(self, pinNum):
         return self.output_pin_states[pinNum]
     
+    def set_output_pin(self, pin, pin_state):
+        if (self.use_arduino):
+            self.arduino_object.toggle_output_pin(pin, pin_state)
+        else:
+            print("KFI_Logic: setting pin:", self.output_pin_states[pin])
+            print("\nKFI_Logic: No arduino in use, check config file.\n")
+    
+    def set_all_output_pins(self, pin_list):
+        for i, val in enumerate(pin_list):
+            self.set_output_pin(i, val)
+    
     # Function to toggle pin on Arduino (abstracted by KFI_Arduino)
     def toggle_output_pin(self, pin):
 
