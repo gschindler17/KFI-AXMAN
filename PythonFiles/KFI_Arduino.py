@@ -65,6 +65,13 @@ class KFI_Arduino:
                 print("KFI_Arduino: Unformattable input from the Arduino")
 
             return return_list
+        
+
+if __name__ == "__main__":
+    print("Running KFI_Ardunio.py")
+    ard = KFI_Arduino(True, "/dev/ttyACM0")
+    while True:
+        ard.READ_ALL_INPUTS()
 
 
 
