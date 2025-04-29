@@ -1,4 +1,4 @@
-const int pins[] =  {20,19,18,17,16,15,14,13,12,11,10,9};  // 12 pins
+const int pins[] =  {2,3,4,5,6,7,8,9,10,11,12,13};  // 12 pins
 const int inpin[] = {52,50,48,46,44,42,40,38,36,34,32,28};
 
 const int pinCount = 12;
