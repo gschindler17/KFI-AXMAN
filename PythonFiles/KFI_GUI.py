@@ -38,6 +38,10 @@ class KFI_GUI(QMainWindow):
         self.out_24.clicked.connect(lambda: self.controller.handle_out_click(11))
         self.out_24.setStyleSheet("border: 2px solid red;")
         
+        self.relay1.setStyleSheet('background-color: red;')
+        self.relay2.setStyleSheet('background-color: red;')
+        self.relay3.setStyleSheet('background-color: red;')
+        
         # self.in_1.clicked.connect(lambda:self.controller.handle_in_click(0))
         self.in_1.setStyleSheet("border: 2px solid red;")
         # self.in_2.clicked.connect(lambda:self.controller.handle_in_click(1))
@@ -218,10 +222,10 @@ class KFI_GUI(QMainWindow):
         except Exception as e:
                 self.boolInput.setPlainText(f"Failed to read file:\n{str(e)}")        
             
-    # def toggle_voltage_read(self, pin):
-    #     print("KFI_GUI: Trying to toggle voltage read on pin ", pin)
-    #     self.controller.toggle_voltage_read(1)
-    #     # self.amps_box_relay3.setText("{}".format(voltage))
+    def toggle_voltage_read(self, pin):
+        print("KFI_GUI: Trying to toggle voltage read on pin ", pin)
+        self.controller.toggle_voltage_read(1)
+        # self.amps_box_relay3.setText("{}".format(voltage))
 
     # def update_volts_boxes(self, volts_list):
     #     self.amps_box_relay1.setText("{}".format(volts_list[1]))
