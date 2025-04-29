@@ -13,6 +13,8 @@ class KFI_Controller:
             False, False, False, False, 
             False, False, False, False
             ]
+        
+        self.bool_logic = None
 
         # Passive thread to handle updating the voltage
         self.taking_input_bool = True
@@ -70,9 +72,14 @@ class KFI_Controller:
             input_states = self.logic.READ_ALL_INPUTS()
             self.gui.update_inputs(input_states)
             time.sleep(self.input_delay)
+            self.submit_bool_logic(None)
         pass
     
     def submit_bool_logic(self, expression):
+        if expression is None:
+            expression = self.bool_logic
+        else:
+            self.bool_logic = self.logic.evaluate_logic_code(expression)
         print(expression)
         temp = self.logic.evaluate_logic_code(expression)
         print(temp)
