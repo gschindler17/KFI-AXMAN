@@ -67,12 +67,15 @@ class KFI_Controller:
 
     def READ_ALL_INPUTS(self):
         self.logic.setup_Arduino()
+        counter = 0
         while(self.taking_input_bool):
             self.check_if_output_toggle()
             input_states = self.logic.READ_ALL_INPUTS()
             self.gui.update_inputs(input_states)
             time.sleep(self.input_delay)
-            self.submit_bool_logic(None)
+            counter = counter + 1
+            if counter == 2000:
+                self.submit_bool_logic(None)
         pass
     
     def submit_bool_logic(self, expression):
