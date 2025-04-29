@@ -14,7 +14,7 @@ class KFI_Controller:
             False, False, False, False
             ]
         
-        self.bool_logic = None
+        self.bool_logic = ""
 
         # Passive thread to handle updating the voltage
         self.taking_input_bool = True
