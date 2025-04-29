@@ -74,7 +74,7 @@ class KFI_Controller:
             self.gui.update_inputs(input_states)
             time.sleep(self.input_delay)
             counter = counter + 1
-            if counter == 2000:
+            if counter == 10:
                 self.submit_bool_logic(None)
         pass
     
