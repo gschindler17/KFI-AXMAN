@@ -109,28 +109,40 @@ class KFI_GUI(QMainWindow):
     def out_button_color(self, button, rgb_string):
         if(button == 0):
             self.out_13.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 1):
             self.out_14.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 2):
             self.out_15.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 3):
             self.out_16.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 4):
             self.out_17.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 5):
             self.out_18.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 6):
             self.out_19.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 7):
             self.out_20.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 8):
             self.out_21.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 9):
             self.out_22.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 10):
             self.out_23.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
         elif(button == 11):
             self.out_24.setStyleSheet("border: 2px solid {};".format(rgb_string))
+            time.sleep(.01)
     
     def update_inputs(self, inputpins):
         if inputpins[0] == 1:
