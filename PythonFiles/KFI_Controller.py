@@ -77,10 +77,10 @@ class KFI_Controller:
             self.gui.update_inputs(input_states)
             time.sleep(self.input_delay)
             counter = counter + 1
-            self.update_breaker_feedback(self.breaker, self.feedback)
             if counter >= 15:
                 self.submit_bool_logic(None)
                 counter = 0
+                self.update_breaker_feedback(self.breaker, self.feedback)
         pass
     
     def submit_bool_logic(self, expression):
