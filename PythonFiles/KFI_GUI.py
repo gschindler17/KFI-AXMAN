@@ -68,6 +68,16 @@ class KFI_GUI(QMainWindow):
         self.in_12.setStyleSheet("border: 2px solid red;")
         
         self.importButton.clicked.connect(self.import_text)
+        self.openRelay1.setText('0')
+        self.closeRelay1.setText('1')
+        self.statusRelay1.setText('Closed')
+        self.openRelay2.setText('0')
+        self.closeRelay2.setText('1')
+        self.statusRelay2.setText('Closed')
+        self.openRelay3.setText('0')
+        self.closeRelay3.setText('1')
+        self.statusRelay3.setText('Closed')
+        
         
     # Controller reference
     def set_controller(self, controller):
@@ -227,6 +237,41 @@ class KFI_GUI(QMainWindow):
         self.controller.toggle_voltage_read(1)
         # self.amps_box_relay3.setText("{}".format(voltage))
 
+    def relay_change(self, relay, state):
+        if relay == 1:
+            if state == 1:
+                self.relay1.setStyleSheet('background-color: green;')
+                self.openRelay1.setText('1')
+                self.closeRelay1.setText('0')
+                self.statusRelay1.setText('Open')
+            if state == 0:
+                self.relay1.setStyleSheet('background-color: red;')
+                self.openRelay1.setText('0')
+                self.closeRelay1.setText('1')
+                self.statusRelay1.setText('Closed')
+        if relay == 2:
+            if state == 1:
+                self.relay2.setStyleSheet('background-color: green;')
+                self.openRelay2.setText('1')
+                self.closeRelay2.setText('0')
+                self.statusRelay2.setText('Open')
+            if state == 0:
+                self.relay2.setStyleSheet('background-color: red;')
+                self.openRelay2.setText('0')
+                self.closeRelay2.setText('1')
+                self.statusRelay2.setText('Closed')
+        if relay == 3:
+            if state == 1:
+                self.relay3.setStyleSheet('background-color: green;')
+                self.openRelay3.setText('1')
+                self.closeRelay3.setText('0')
+                self.statusRelay3.setText('Open')
+            if state == 0:
+                self.relay3.setStyleSheet('background-color: red;') 
+                self.openRelay3.setText('0')
+                self.closeRelay3.setText('1')
+                self.statusRelay3.setText('Closed')  
+                     
     # def update_volts_boxes(self, volts_list):
     #     self.amps_box_relay1.setText("{}".format(volts_list[1]))
     #     self.amps_box_relay3.setText("{}".format(volts_list[3]))
