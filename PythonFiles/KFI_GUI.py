@@ -244,6 +244,7 @@ class KFI_GUI(QMainWindow):
         # self.amps_box_relay3.setText("{}".format(voltage))  
        
     def update_breaker_feedback(self, breaker, feedback_vals):
+        print(feedback_vals)
         if feedback_vals[0]:
             self.relay1.setStyleSheet('background-color: red;')
         else:
