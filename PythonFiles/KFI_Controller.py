@@ -116,6 +116,8 @@ class KFI_Controller:
         print("Controller: breaker:", breaker, "feedback:", feedback)
 
     def update_breaker_feedback(self, breaker, feedback):
+        # feedback_vals is a list of true or false for the corresponding feedback location
+        # feedback is just what output pin is mapped to the breaker
         feedback_vals = self.logic.get_breaker_feedback(breaker, feedback)
         self.gui.update_breaker_feedback(breaker, feedback_vals)
 
