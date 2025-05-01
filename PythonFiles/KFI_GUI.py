@@ -92,7 +92,7 @@ class KFI_GUI(QMainWindow):
         open_vals = [self.openRelay1.toPlainText(),self.openRelay2.toPlainText(), self.openRelay3.toPlainText()]
         close_vals =  [self.closeRelay1.toPlainText(),self.closeRelay2.toPlainText(), self.closeRelay3.toPlainText()]
         status_vals = [self.statusRelay1.toPlainText(), self.statusRelay2.toPlainText(), self.statusRelay3.toPlainText()]
-        self.controller.pass_breaker_vals(open_vals, close_vals, status_vals )
+        self.controller.pass_breaker_vals([1,2,3], open_vals, close_vals, status_vals )
         self.controller.set_breaker_feedback(status_vals)
 
     # GUI method

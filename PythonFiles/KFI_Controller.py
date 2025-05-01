@@ -15,6 +15,7 @@ class KFI_Controller:
             ]
         
         self.bool_logic = ""
+        self.breaker_commands = []
 
         # Passive thread to handle updating the voltage
         self.taking_input_bool = True
@@ -83,7 +84,7 @@ class KFI_Controller:
         if expression is None:
             expression = self.bool_logic
         else:
-            self.bool_logic = self.logic.evaluate_logic_code(expression)
+            self.bool_logic = expression
         print(expression)
         temp = self.logic.evaluate_logic_code(expression)
         print(temp)
@@ -98,3 +99,19 @@ class KFI_Controller:
                 self.gui.out_button_color(i, "green")
             else:
                 self.gui.out_button_color(i, "red")
+
+    def pass_breaker_vals(self, breaker, open, close, feedback):
+        print("Controller: breaker:", breaker, "open:", open, "close:", close, "feedback:", feedback)
+        
+        self.breaker_command_string = ""
+        for i, val in enumerate(breaker):
+            self.breaker_command_string = f"{feedback[i]}={close[i]}*!{open[i]};\n"
+        print("\nController: Command String:", self.breaker_command_string)
+        print("\nController: Annexed String:", self.bool_logic + self.breaker_command_string,"\n")
+        self.submit_bool_logic(self.bool_logic + self.breaker_command_string)
+
+
+    def set_breaker_feedback(self, breaker, feedback):
+        print("Controller: breaker:", breaker, "feedback:", feedback)
+
+
