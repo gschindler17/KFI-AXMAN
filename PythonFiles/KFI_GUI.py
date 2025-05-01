@@ -93,7 +93,7 @@ class KFI_GUI(QMainWindow):
         close_vals =  [self.closeRelay1.text(),self.closeRelay2.text(), self.closeRelay3.text()]
         status_vals = [self.statusRelay1.text(), self.statusRelay2.text(), self.statusRelay3.text()]
         self.controller.pass_breaker_vals([1,2,3], open_vals, close_vals, status_vals )
-        self.controller.set_breaker_feedback([1,2,3],status_vals)
+        # self.controller.set_breaker_feedback([1,2,3],status_vals)
 
     # GUI method
     def line_relay_color(self, relay_id, rgb_string):
