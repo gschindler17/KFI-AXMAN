@@ -100,6 +100,7 @@ class KFI_Controller:
             else:
                 self.gui.out_button_color(i, "red")
 
+    #TODO Put the guts of this into the logic function
     def pass_breaker_vals(self, breaker, open, close, feedback):
         print("Controller: breaker:", breaker, "open:", open, "close:", close, "feedback:", feedback)
         
@@ -113,5 +114,9 @@ class KFI_Controller:
 
     def set_breaker_feedback(self, breaker, feedback):
         print("Controller: breaker:", breaker, "feedback:", feedback)
+
+    def update_breaker_feedback(self, breaker, feedback):
+        feedback_vals = self.logic.get_breaker_feedback(breaker, feedback)
+        self.gui.update_breaker_feedback(breaker, feedback_vals)
 
 

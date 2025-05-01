@@ -173,8 +173,13 @@ class KFI_Logic:
 
         return new_outputs
 
+    def get_breaker_feedback(self, breaker, feedback):
+        feedback_vals = []
+        for i, val in enumerate(breaker):
+            feedback_vals.append(self.output_pin_states[feedback[i] - 12])
+        print("Logic: feedback_vals:", feedback_vals)
+        return feedback_vals
 
-    
 
 # Example usage (adjust port as needed)
 if __name__ == "__main__":
