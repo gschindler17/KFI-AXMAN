@@ -244,7 +244,19 @@ class KFI_GUI(QMainWindow):
         # self.amps_box_relay3.setText("{}".format(voltage))  
        
     def update_breaker_feedback(self, breaker, feedback_vals):
-        print(feedback_vals)              
+        if feedback_vals[0]:
+            self.relay1.setStyleSheet('background-color: red;')
+        else:
+            self.relay1.setStyleSheet('background-color: green;')
+        if feedback_vals[1]:
+            self.relay2.setStyleSheet('background-color: red;')
+        else:
+            self.relay2.setStyleSheet('background-color: green;')
+        if feedback_vals[2]:
+            self.relay3.setStyleSheet('background-color: red;')
+        else:
+            self.relay3.setStyleSheet('background-color: green;')         
+              
     # def update_volts_boxes(self, volts_list):
     #     self.amps_box_relay1.setText("{}".format(volts_list[1]))
     #     self.amps_box_relay3.setText("{}".format(volts_list[3]))
