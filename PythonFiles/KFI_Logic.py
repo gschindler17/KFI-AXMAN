@@ -178,6 +178,8 @@ class KFI_Logic:
         for i, val in enumerate(feedback):
             feedback_vals.append(self.output_pin_states[int(feedback[i]) - 13])
         print("Logic: feedback_vals:", feedback_vals)
+        if len(feedback_vals) < 1:
+            feedback_vals = [False, False, False]
         return feedback_vals
 
 
