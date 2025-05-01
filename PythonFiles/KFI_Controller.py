@@ -70,7 +70,7 @@ class KFI_Controller:
 
     def READ_ALL_INPUTS(self):
         self.logic.setup_Arduino()
-        counter = 0
+        counter = 15
         while(self.taking_input_bool):
             self.check_if_output_toggle()
             input_states = self.logic.READ_ALL_INPUTS()
