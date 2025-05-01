@@ -74,10 +74,10 @@ class KFI_GUI(QMainWindow):
         self.statusRelay1.setText('22')
         self.openRelay2.setText('11')
         self.closeRelay2.setText('12')
-        self.statusRelay2.setText('23')
+        self.statusRelay2.setText('24')
         self.openRelay3.setText('9')
         self.closeRelay3.setText('10')
-        self.statusRelay3.setText('24')
+        self.statusRelay3.setText('23')
         
         
     # Controller reference
@@ -242,7 +242,9 @@ class KFI_GUI(QMainWindow):
         print("KFI_GUI: Trying to toggle voltage read on pin ", pin)
         self.controller.toggle_voltage_read(1)
         # self.amps_box_relay3.setText("{}".format(voltage))  
-                     
+       
+    def update_breaker_feedback(self, breaker, feedback_vals):
+        print(feedback_vals)              
     # def update_volts_boxes(self, volts_list):
     #     self.amps_box_relay1.setText("{}".format(volts_list[1]))
     #     self.amps_box_relay3.setText("{}".format(volts_list[3]))
