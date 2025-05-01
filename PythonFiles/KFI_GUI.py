@@ -79,7 +79,7 @@ class KFI_GUI(QMainWindow):
         self.closeRelay3.setText('10')
         self.statusRelay3.setText('23')
 
-        self.update_line()
+        
         
         
     # Controller reference
@@ -87,6 +87,7 @@ class KFI_GUI(QMainWindow):
         # Sets the controller instance after GUI initialization.
         print("KFI_GUI: Controller set.")
         self.controller = controller
+        self.update_line()
         
     def update_line(self):
         
