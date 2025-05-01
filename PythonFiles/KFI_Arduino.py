@@ -3,6 +3,8 @@ import time
 import threading
 
 
+
+
 class KFI_Arduino:
     def __init__(self, comm_type, port_num):
         
@@ -10,9 +12,15 @@ class KFI_Arduino:
         # How commands are sent
         self.pin_nums = [2,3,4,5,6,7,8,9,10,11,12,13]
         self.input_pin_nums = [52,50,48,46,44,42,40,38,36,34,32,28]
-        self.arduino = serial.Serial(comm_type, port_num, timeout=1)
-        self.misfire_count = 0
         self.arduino_crashed = False
+        self.misfire_count = 0
+        try:
+            self.arduino = serial.Serial(comm_type, port_num, timeout=1)
+        except:
+            print("\n\n\nKFI_Arduino: CANNOT CREATE SERIAL CONNECTION TO THE ARDUINO\n\n\n")
+            self.arduino_crashed = True
+        
+        
         
         self.thread_lock = threading.Lock() #Prevents simultaneous writes
         
