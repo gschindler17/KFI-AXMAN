@@ -15,6 +15,8 @@ class KFI_Controller:
             ]
         
         self.bool_logic = ""
+        self.breaker = []
+        self.feedback = []
         self.breaker_commands = []
 
         # Passive thread to handle updating the voltage
@@ -90,6 +92,7 @@ class KFI_Controller:
         print(temp)
         self.logic.set_all_output_pins(temp)
         self.update_all_out_buttons(temp)
+        self.update_breaker_feedback(self.breaker, self.feedback)
         
         
 
@@ -110,7 +113,9 @@ class KFI_Controller:
         # print("\nController: Command String:", self.breaker_command_string)
         # print("\nController: Annexed String:", self.bool_logic + self.breaker_command_string)
         self.submit_bool_logic(self.bool_logic + self.breaker_command_string)
-        self.update_breaker_feedback(breaker, feedback)
+        self.feedback = feedback
+        self.breaker = breaker
+        self.update_breaker_feedback(self.breaker, self.feedback)
 
 
     # def set_breaker_feedback(self, breaker, feedback):
