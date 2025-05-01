@@ -105,7 +105,7 @@ class KFI_Controller:
         
         self.breaker_command_string = ""
         for i, val in enumerate(breaker):
-            self.breaker_command_string = f"{feedback[i]}={close[i]}*!{open[i]};\n"
+            self.breaker_command_string = self.breaker_command_string + f"{feedback[i]}={close[i]}*!{open[i]};\n"
         print("\nController: Command String:", self.breaker_command_string)
         print("\nController: Annexed String:", self.bool_logic + self.breaker_command_string,"\n")
         self.submit_bool_logic(self.bool_logic + self.breaker_command_string)
