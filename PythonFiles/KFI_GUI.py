@@ -68,15 +68,17 @@ class KFI_GUI(QMainWindow):
         self.in_12.setStyleSheet("border: 2px solid red;")
         
         self.importButton.clicked.connect(self.import_text)
-        self.openRelay1.setText('0')
-        self.closeRelay1.setText('1')
-        self.statusRelay1.setText('Closed')
-        self.openRelay2.setText('0')
-        self.closeRelay2.setText('1')
-        self.statusRelay2.setText('Closed')
-        self.openRelay3.setText('0')
-        self.closeRelay3.setText('1')
-        self.statusRelay3.setText('Closed')
+        self.confirmRelays.clicked.connect(self.confirm_relays)
+        
+        self.openRelay1.setText('7')
+        self.closeRelay1.setText('8')
+        self.statusRelay1.setText('22')
+        self.openRelay2.setText('11')
+        self.closeRelay2.setText('12')
+        self.statusRelay2.setText('23')
+        self.openRelay3.setText('9')
+        self.closeRelay3.setText('10')
+        self.statusRelay3.setText('24')
         
         
     # Controller reference
@@ -235,43 +237,17 @@ class KFI_GUI(QMainWindow):
     def toggle_voltage_read(self, pin):
         print("KFI_GUI: Trying to toggle voltage read on pin ", pin)
         self.controller.toggle_voltage_read(1)
-        # self.amps_box_relay3.setText("{}".format(voltage))
-
-    def relay_change(self, relay, state):
-        if relay == 1:
-            if state == 1:
-                self.relay1.setStyleSheet('background-color: green;')
-                self.openRelay1.setText('1')
-                self.closeRelay1.setText('0')
-                self.statusRelay1.setText('Open')
-            if state == 0:
-                self.relay1.setStyleSheet('background-color: red;')
-                self.openRelay1.setText('0')
-                self.closeRelay1.setText('1')
-                self.statusRelay1.setText('Closed')
-        if relay == 2:
-            if state == 1:
-                self.relay2.setStyleSheet('background-color: green;')
-                self.openRelay2.setText('1')
-                self.closeRelay2.setText('0')
-                self.statusRelay2.setText('Open')
-            if state == 0:
-                self.relay2.setStyleSheet('background-color: red;')
-                self.openRelay2.setText('0')
-                self.closeRelay2.setText('1')
-                self.statusRelay2.setText('Closed')
-        if relay == 3:
-            if state == 1:
-                self.relay3.setStyleSheet('background-color: green;')
-                self.openRelay3.setText('1')
-                self.closeRelay3.setText('0')
-                self.statusRelay3.setText('Open')
-            if state == 0:
-                self.relay3.setStyleSheet('background-color: red;') 
-                self.openRelay3.setText('0')
-                self.closeRelay3.setText('1')
-                self.statusRelay3.setText('Closed')  
+        # self.amps_box_relay3.setText("{}".format(voltage))  
                      
+    def confirm_relays(self):
+        self.controller.pass_breaker_vals(1, self.openRelay1.toPlainText(), self.closeRelay1.toPlainText(), self.statusRelay1.toPlainText() )
+        self.controller.pass_breaker_vals(2, self.openRelay2.toPlainText(), self.closeRelay2.toPlainText(), self.statusRelay2.toPlainText() )
+        self.controller.pass_breaker_vals(3, self.openRelay3.toPlainText(), self.closeRelay3.toPlainText(), self.statusRelay3.toPlainText() )
+        self.controller.set_breaker_feedback(1, self.statusRelay1.toPlainText())
+        self.controller.set_breaker_feedback(2, self.statusRelay2.toPlainText())
+        self.controller.set_breaker_feedback(3, self.statusRelay3.toPlainText())
+        
+        
     # def update_volts_boxes(self, volts_list):
     #     self.amps_box_relay1.setText("{}".format(volts_list[1]))
     #     self.amps_box_relay3.setText("{}".format(volts_list[3]))
