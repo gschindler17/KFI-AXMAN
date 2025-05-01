@@ -31,7 +31,7 @@ class KFI_Arduino:
                 state_set = "HIGH"
 
             message = f"{self.pin_nums[pin]},{state_set}\n"
-            print(f"Sent: {message.strip()}")
+            # print(f"Sent: {message.strip()}")
             response = None
 
             
