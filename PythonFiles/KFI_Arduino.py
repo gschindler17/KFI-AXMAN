@@ -19,6 +19,7 @@ class KFI_Arduino:
         except:
             print("\n\n\nKFI_Arduino: CANNOT CREATE SERIAL CONNECTION TO THE ARDUINO\n\n\n")
             self.arduino_crashed = True
+            self.arduino = None
         
         
         
