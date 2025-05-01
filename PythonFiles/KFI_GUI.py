@@ -89,9 +89,9 @@ class KFI_GUI(QMainWindow):
     def update_line(self):
         
         self.controller.submit_bool_logic(self.boolInput.toPlainText())
-        open_vals = [self.openRelay1.toPlainText(),self.openRelay2.toPlainText(), self.openRelay3.toPlainText()]
-        close_vals =  [self.closeRelay1.toPlainText(),self.closeRelay2.toPlainText(), self.closeRelay3.toPlainText()]
-        status_vals = [self.statusRelay1.toPlainText(), self.statusRelay2.toPlainText(), self.statusRelay3.toPlainText()]
+        open_vals = [self.openRelay1.text(),self.openRelay2.text(), self.openRelay3.text()]
+        close_vals =  [self.closeRelay1.text(),self.closeRelay2.text(), self.closeRelay3.text()]
+        status_vals = [self.statusRelay1.text(), self.statusRelay2.text(), self.statusRelay3.text()]
         self.controller.pass_breaker_vals([1,2,3], open_vals, close_vals, status_vals )
         self.controller.set_breaker_feedback(status_vals)
 
