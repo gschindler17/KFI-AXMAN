@@ -110,10 +110,11 @@ class KFI_Controller:
         # print("\nController: Command String:", self.breaker_command_string)
         # print("\nController: Annexed String:", self.bool_logic + self.breaker_command_string)
         self.submit_bool_logic(self.bool_logic + self.breaker_command_string)
+        self.update_breaker_feedback(breaker, feedback)
 
 
-    def set_breaker_feedback(self, breaker, feedback):
-        print("Controller: breaker:", breaker, "feedback:", feedback)
+    # def set_breaker_feedback(self, breaker, feedback):
+    #     print("Controller: breaker:", breaker, "feedback:", feedback)
 
     def update_breaker_feedback(self, breaker, feedback):
         # feedback_vals is a list of true or false for the corresponding feedback location
