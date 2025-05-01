@@ -175,7 +175,7 @@ class KFI_Logic:
 
     def get_breaker_feedback(self, breaker, feedback):
         feedback_vals = []
-        for i, val in enumerate(breaker):
+        for i, val in enumerate(feedback):
             feedback_vals.append(self.output_pin_states[int(feedback[i]) - 12])
         print("Logic: feedback_vals:", feedback_vals)
         return feedback_vals
