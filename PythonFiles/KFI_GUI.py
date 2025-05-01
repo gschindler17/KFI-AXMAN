@@ -1,6 +1,6 @@
 import sys
 from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QVBoxLayout, QLineEdit
+from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QWidget, QVBoxLayout, QLineEdit, QMessageBox
 import PythonFiles.KFI_Controller as controller
 import time
 
@@ -265,6 +265,8 @@ class KFI_GUI(QMainWindow):
         else:
             self.relay3.setStyleSheet('background-color: green;')         
               
+    def arduino_crashed(self):
+        QMessageBox.information('Error', 'Arduino Crashed. Restart GUI')
     # def update_volts_boxes(self, volts_list):
     #     self.amps_box_relay1.setText("{}".format(volts_list[1]))
     #     self.amps_box_relay3.setText("{}".format(volts_list[3]))
