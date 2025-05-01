@@ -68,7 +68,6 @@ class KFI_GUI(QMainWindow):
         self.in_12.setStyleSheet("border: 2px solid red;")
         
         self.importButton.clicked.connect(self.import_text)
-        self.confirmRelays.clicked.connect(self.confirm_relays)
         
         self.openRelay1.setText('7')
         self.closeRelay1.setText('8')
@@ -90,7 +89,12 @@ class KFI_GUI(QMainWindow):
     def update_line(self):
         
         self.controller.submit_bool_logic(self.boolInput.toPlainText())
-            
+        open_vals = [self.openRelay1.toPlainText(),self.openRelay2.toPlainText(), self.openRelay3.toPlainText()]
+        close_vals =  [self.closeRelay1.toPlainText(),self.closeRelay2.toPlainText(), self.closeRelay3.toPlainText()]
+        status_vals = [self.statusRelay1.toPlainText(), self.statusRelay2.toPlainText(), self.statusRelay3.toPlainText()]
+        self.controller.pass_breaker_vals(open_vals, close_vals, status_vals )
+        self.controller.set_breaker_feedback(status_vals)
+
     # GUI method
     def line_relay_color(self, relay_id, rgb_string):
         
@@ -239,15 +243,6 @@ class KFI_GUI(QMainWindow):
         self.controller.toggle_voltage_read(1)
         # self.amps_box_relay3.setText("{}".format(voltage))  
                      
-    def confirm_relays(self):
-        self.controller.pass_breaker_vals(1, self.openRelay1.toPlainText(), self.closeRelay1.toPlainText(), self.statusRelay1.toPlainText() )
-        self.controller.pass_breaker_vals(2, self.openRelay2.toPlainText(), self.closeRelay2.toPlainText(), self.statusRelay2.toPlainText() )
-        self.controller.pass_breaker_vals(3, self.openRelay3.toPlainText(), self.closeRelay3.toPlainText(), self.statusRelay3.toPlainText() )
-        self.controller.set_breaker_feedback(1, self.statusRelay1.toPlainText())
-        self.controller.set_breaker_feedback(2, self.statusRelay2.toPlainText())
-        self.controller.set_breaker_feedback(3, self.statusRelay3.toPlainText())
-        
-        
     # def update_volts_boxes(self, volts_list):
     #     self.amps_box_relay1.setText("{}".format(volts_list[1]))
     #     self.amps_box_relay3.setText("{}".format(volts_list[3]))
