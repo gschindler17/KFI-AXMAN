@@ -88,10 +88,7 @@ class KFI_GUI(QMainWindow):
         # Sets the controller instance after GUI initialization.
         print("KFI_GUI: Controller set.")
         self.controller = controller
-        open_vals = [self.openRelay1.text(),self.openRelay2.text(), self.openRelay3.text()]
-        close_vals =  [self.closeRelay1.text(),self.closeRelay2.text(), self.closeRelay3.text()]
-        status_vals = [self.statusRelay1.text(), self.statusRelay2.text(), self.statusRelay3.text()]
-        self.controller.pass_breaker_vals([1,2,3], open_vals, close_vals, status_vals )
+
 
 
         
