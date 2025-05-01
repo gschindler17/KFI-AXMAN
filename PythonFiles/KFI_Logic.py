@@ -183,6 +183,9 @@ class KFI_Logic:
         return feedback_vals
 
 
+    def get_arduino_crashed(self):
+        return self.arduino_object.get_arduino_crashed()
+
 # Example usage (adjust port as needed)
 if __name__ == "__main__":
     print("Running KFI_Logic.py")

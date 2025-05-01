@@ -18,6 +18,7 @@ class KFI_Controller:
         self.breaker = []
         self.feedback = []
         self.breaker_commands = []
+        self.arduino_crashed = False
 
         # Passive thread to handle updating the voltage
         self.taking_input_bool = True
@@ -83,6 +84,9 @@ class KFI_Controller:
                 self.submit_bool_logic(None)
                 counter = 0
                 self.update_breaker_feedback(self.breaker, self.feedback)
+                if self.logic.get_arduino_crashed():
+                    self.arduino_crashed = True
+                    self.gui.arduino_crashed()
         pass
     
     def submit_bool_logic(self, expression):

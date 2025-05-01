@@ -11,6 +11,8 @@ class KFI_Arduino:
         self.pin_nums = [2,3,4,5,6,7,8,9,10,11,12,13]
         self.input_pin_nums = [52,50,48,46,44,42,40,38,36,34,32,28]
         self.arduino = serial.Serial(comm_type, port_num, timeout=1)
+        self.misfire_count = 0
+        self.arduino_crashed = False
         
         self.thread_lock = threading.Lock() #Prevents simultaneous writes
         
@@ -55,6 +57,7 @@ class KFI_Arduino:
             self.arduino.write(message.encode())  # 0xA0: Custom command to request a pin reading
             response = self.arduino.readline().decode().strip()
             
+            
             if response:
                 print(f"KFI_Arduino: Completed read all inputs: _{response.strip()}_")
 
@@ -63,9 +66,16 @@ class KFI_Arduino:
                 return_list = list(map(int, response.split(',')))
             except:
                 print("KFI_Arduino: Unformattable input from the Arduino")
+                self.misfire_count = self.misfire_count + 1
+
+                if self.misfire_count >= 10:
+                    self.arduino_crashed = True
+
 
             return return_list
         
+    def get_arduino_crashed(self):
+        return self.arduino_crashed
 
 if __name__ == "__main__":
     print("Running KFI_Ardunio.py")
