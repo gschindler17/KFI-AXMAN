@@ -11,61 +11,62 @@ class KFI_GUI(QMainWindow):
 
         
         self.confirmButton.clicked.connect(self.update_line)
+        self.confirmButton2.clicked.connect(self.update_line)
         
         # TODO Like this
         self.out_13.clicked.connect(lambda: self.controller.handle_out_click(0))
-        self.out_13.setStyleSheet("border: 2px solid red;")
+        self.out_13.setStyleSheet("border: 2px solid green;")
         self.out_14.clicked.connect(lambda: self.controller.handle_out_click(1))
-        self.out_14.setStyleSheet("border: 2px solid red;")
+        self.out_14.setStyleSheet("border: 2px solid green;")
         self.out_15.clicked.connect(lambda: self.controller.handle_out_click(2))
-        self.out_15.setStyleSheet("border: 2px solid red;")
+        self.out_15.setStyleSheet("border: 2px solid green;")
         self.out_16.clicked.connect(lambda: self.controller.handle_out_click(3))
-        self.out_16.setStyleSheet("border: 2px solid red;")
+        self.out_16.setStyleSheet("border: 2px solid green;")
         self.out_17.clicked.connect(lambda: self.controller.handle_out_click(4))
-        self.out_17.setStyleSheet("border: 2px solid red;")
+        self.out_17.setStyleSheet("border: 2px solid green;")
         self.out_18.clicked.connect(lambda: self.controller.handle_out_click(5))
-        self.out_18.setStyleSheet("border: 2px solid red;")
+        self.out_18.setStyleSheet("border: 2px solid green;")
         self.out_19.clicked.connect(lambda: self.controller.handle_out_click(6))
-        self.out_19.setStyleSheet("border: 2px solid red;")
+        self.out_19.setStyleSheet("border: 2px solid green;")
         self.out_20.clicked.connect(lambda: self.controller.handle_out_click(7))
-        self.out_20.setStyleSheet("border: 2px solid red;")
+        self.out_20.setStyleSheet("border: 2px solid green;")
         self.out_21.clicked.connect(lambda: self.controller.handle_out_click(8))
-        self.out_21.setStyleSheet("border: 2px solid red;")
+        self.out_21.setStyleSheet("border: 2px solid green;")
         self.out_22.clicked.connect(lambda: self.controller.handle_out_click(9))
-        self.out_22.setStyleSheet("border: 2px solid red;")
+        self.out_22.setStyleSheet("border: 2px solid green;")
         self.out_23.clicked.connect(lambda: self.controller.handle_out_click(10))
-        self.out_23.setStyleSheet("border: 2px solid red;")
+        self.out_23.setStyleSheet("border: 2px solid green;")
         self.out_24.clicked.connect(lambda: self.controller.handle_out_click(11))
-        self.out_24.setStyleSheet("border: 2px solid red;")
+        self.out_24.setStyleSheet("border: 2px solid green;")
         
-        self.relay1.setStyleSheet('background-color: red;')
-        self.relay2.setStyleSheet('background-color: red;')
-        self.relay3.setStyleSheet('background-color: red;')
+        self.relay1.setStyleSheet('background-color: green;')
+        self.relay2.setStyleSheet('background-color: green;')
+        self.relay3.setStyleSheet('background-color: green;')
         
         # self.in_1.clicked.connect(lambda:self.controller.handle_in_click(0))
-        self.in_1.setStyleSheet("border: 2px solid red;")
+        self.in_1.setStyleSheet("border: 2px solid green;")
         # self.in_2.clicked.connect(lambda:self.controller.handle_in_click(1))
-        self.in_2.setStyleSheet("border: 2px solid red;")
+        self.in_2.setStyleSheet("border: 2px solid green;")
         # self.in_3.clicked.connect(lambda:self.controller.handle_in_click(2))
-        self.in_3.setStyleSheet("border: 2px solid red;")
+        self.in_3.setStyleSheet("border: 2px solid green;")
         # self.in_4.clicked.connect(lambda:self.controller.handle_in_click(3))
-        self.in_4.setStyleSheet("border: 2px solid red;")
+        self.in_4.setStyleSheet("border: 2px solid green;")
         # self.in_5.clicked.connect(lambda:self.controller.handle_in_click(4))
-        self.in_5.setStyleSheet("border: 2px solid red;")
+        self.in_5.setStyleSheet("border: 2px solid green;")
         # self.in_6.clicked.connect(lambda:self.controller.handle_in_click(5))
-        self.in_6.setStyleSheet("border: 2px solid red;")
+        self.in_6.setStyleSheet("border: 2px solid green;")
         # self.in_7.clicked.connect(lambda:self.controller.handle_in_click(6))
-        self.in_7.setStyleSheet("border: 2px solid red;")
+        self.in_7.setStyleSheet("border: 2px solid green;")
         # self.in_8.clicked.connect(lambda:self.controller.handle_in_click(7))
-        self.in_8.setStyleSheet("border: 2px solid red;")
+        self.in_8.setStyleSheet("border: 2px solid green;")
         # self.in_9.clicked.connect(lambda:self.controller.handle_in_click(8))
-        self.in_9.setStyleSheet("border: 2px solid red;")
+        self.in_9.setStyleSheet("border: 2px solid green;")
         # self.in_10.clicked.connect(lambda:self.controller.handle_in_click(9))
-        self.in_10.setStyleSheet("border: 2px solid red;")
+        self.in_10.setStyleSheet("border: 2px solid green;")
         # self.in_11.clicked.connect(lambda:self.controller.handle_in_click(10))
-        self.in_11.setStyleSheet("border: 2px solid red;")
+        self.in_11.setStyleSheet("border: 2px solid green;")
         # self.in_12.clicked.connect(lambda:self.controller.handle_in_click(11))
-        self.in_12.setStyleSheet("border: 2px solid red;")
+        self.in_12.setStyleSheet("border: 2px solid green;")
         
         self.importButton.clicked.connect(self.import_text)
         
@@ -79,6 +80,7 @@ class KFI_GUI(QMainWindow):
         self.closeRelay3.setText('10')
         self.statusRelay3.setText('23')
 
+        self.textFileInput.setText('/setting_configs/samplefile.txt')
 
         
         
@@ -172,64 +174,64 @@ class KFI_GUI(QMainWindow):
     
     def update_inputs(self, inputpins):
         if inputpins[0] == 1:
-            self.in_1.setStyleSheet('border: 2px solid green;')
-        elif inputpins[0] != 1:
             self.in_1.setStyleSheet('border: 2px solid red;')
+        elif inputpins[0] != 1:
+            self.in_1.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[1] == 1:
-            self.in_2.setStyleSheet('border: 2px solid green;')
-        elif inputpins[1] != 1:
             self.in_2.setStyleSheet('border: 2px solid red;')
+        elif inputpins[1] != 1:
+            self.in_2.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[2] == 1:
-            self.in_3.setStyleSheet('border: 2px solid green;')
-        elif inputpins[2] != 1:
             self.in_3.setStyleSheet('border: 2px solid red;')
+        elif inputpins[2] != 1:
+            self.in_3.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[3] == 1:
-            self.in_4.setStyleSheet('border: 2px solid green;')
-        elif inputpins[3] != 1:
             self.in_4.setStyleSheet('border: 2px solid red;')
+        elif inputpins[3] != 1:
+            self.in_4.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[4] == 1:
-            self.in_5.setStyleSheet('border: 2px solid green;')
-        elif inputpins[4] != 1:
             self.in_5.setStyleSheet('border: 2px solid red;')
+        elif inputpins[4] != 1:
+            self.in_5.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[5] == 1:
-            self.in_6.setStyleSheet('border: 2px solid green;')
-        elif inputpins[5] != 1:
             self.in_6.setStyleSheet('border: 2px solid red;')
+        elif inputpins[5] != 1:
+            self.in_6.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[6] == 1:
-            self.in_7.setStyleSheet('border: 2px solid green;')
-        elif inputpins[6] != 1:
             self.in_7.setStyleSheet('border: 2px solid red;')
+        elif inputpins[6] != 1:
+            self.in_7.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[7] == 1:
-            self.in_8.setStyleSheet('border: 2px solid green;')
-        elif inputpins[7] != 1:
             self.in_8.setStyleSheet('border: 2px solid red;')
+        elif inputpins[7] != 1:
+            self.in_8.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[8] == 1:
-            self.in_9.setStyleSheet('border: 2px solid green;')
-        elif inputpins[8] != 1:
             self.in_9.setStyleSheet('border: 2px solid red;')
+        elif inputpins[8] != 1:
+            self.in_9.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[9] == 1:
-            self.in_10.setStyleSheet('border: 2px solid green;')
-        elif inputpins[9] != 1:
             self.in_10.setStyleSheet('border: 2px solid red;')
+        elif inputpins[9] != 1:
+            self.in_10.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[10] == 1:
-            self.in_11.setStyleSheet('border: 2px solid green;')
-        elif inputpins[10] != 1:
             self.in_11.setStyleSheet('border: 2px solid red;')
+        elif inputpins[10] != 1:
+            self.in_11.setStyleSheet('border: 2px solid green;')
         time.sleep(.01)
         if inputpins[11] == 1:
-            self.in_12.setStyleSheet('border: 2px solid green;')
-        elif inputpins[11] != 1:
             self.in_12.setStyleSheet('border: 2px solid red;')
+        elif inputpins[11] != 1:
+            self.in_12.setStyleSheet('border: 2px solid green;')
       
     def import_text(self): 
         filepath = self.textFileInput.text()
