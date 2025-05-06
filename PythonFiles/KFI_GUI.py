@@ -80,7 +80,7 @@ class KFI_GUI(QMainWindow):
         self.closeRelay3.setText('10')
         self.statusRelay3.setText('23')
 
-        self.textFileInput.setText('/setting_configs/samplefile.txt')
+        self.textFileInput.setText('setting_configs/samplefile.txt')
 
         
         
