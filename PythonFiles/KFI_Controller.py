@@ -105,9 +105,9 @@ class KFI_Controller:
     def update_all_out_buttons(self, output_vals):
         for i, val in enumerate(output_vals): 
             if val:
-                self.gui.out_button_color(i, "green")
-            else:
                 self.gui.out_button_color(i, "red")
+            else:
+                self.gui.out_button_color(i, "green")
 
     #TODO Put the guts of this into the logic function
     def pass_breaker_vals(self, breaker, open, close, feedback):
