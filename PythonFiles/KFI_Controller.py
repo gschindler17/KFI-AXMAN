@@ -98,12 +98,7 @@ class KFI_Controller:
         else:
             self.bool_logic = expression
         print(expression)
-        temp = ""
-        try:
-            temp = self.logic.evaluate_logic_code(expression)
-        except RuntimeError as e:
-            print("\n\nKFI_Controller: INVALID BOOLEAN COMMAND FOUND\n\n")
-            raise e
+        temp = self.logic.evaluate_logic_code(expression)
         print(temp)
         self.logic.set_all_output_pins(temp)
         self.update_all_out_buttons(temp)
