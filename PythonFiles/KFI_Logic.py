@@ -175,7 +175,7 @@ class KFI_Logic:
 
         except Exception as e:
             print("\n\nKFI_Logic: INVALID BOOLEAN COMMAND FOUND\n\n")
-            raise RuntimeError("KFI_Logic: Raised runtime exception for invalid boolean expression")
+            raise e
 
         return new_outputs 
 
