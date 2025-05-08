@@ -127,7 +127,10 @@ class KFI_Controller:
             self.breaker_command_string = self.breaker_command_string + f"{feedback[i]}={close[i]}*!{open[i]};\n"
         # print("\nController: Command String:", self.breaker_command_string)
         # print("\nController: Annexed String:", self.bool_logic + self.breaker_command_string)
-        self.submit_bool_logic(self.bool_logic + self.breaker_command_string)
+        try:
+            self.submit_bool_logic(self.bool_logic + self.breaker_command_string)
+        except Exception as e:
+            print("\n\nKFI_Controller: EXCEPTION FOUND IN pass_breaker_vals\n\n")
         self.feedback = feedback
         self.breaker = breaker
         self.update_breaker_feedback(self.breaker, self.feedback)
