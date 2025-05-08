@@ -277,5 +277,6 @@ class KFI_GUI(QMainWindow):
     #     self.amps_box_relay3.setText("{}".format(volts_list[3]))
     
     def throw_logic_exception(self, error):
-        QMessageBox.information('Error', error)
+        error = str(error)
+        QMessageBox.information(self,'Error', error)
              
