@@ -85,7 +85,6 @@ class KFI_Controller:
                     self.submit_bool_logic(None)
                 except Exception as e:
                     print("\n\nKFI_Controller: INVALID BOOLEAN COMMAND FOUND; READ_ALL_INPUTS FUNCTION\n\n")
-                    self.gui.throw_logic_exception("KFI_Controller: INVALID BOOLEAN COMMAND FOUND")
                 counter = 0
                 self.update_breaker_feedback(self.breaker, self.feedback)
                 if self.logic.get_arduino_crashed():
