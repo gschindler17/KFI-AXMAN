@@ -100,7 +100,6 @@ class KFI_GUI(QMainWindow):
             self.controller.submit_bool_logic(self.boolInput.toPlainText())
         except RuntimeError as e:
             print(f"\n\nKFI_GUI: Exception[ERROR] Exception in submit_bool_logic: {e}\n\n")
-            QMessageBox.information('Error', 'Invalid Input')
         open_vals = [self.openRelay1.text(),self.openRelay2.text(), self.openRelay3.text()]
         close_vals =  [self.closeRelay1.text(),self.closeRelay2.text(), self.closeRelay3.text()]
         status_vals = [self.statusRelay1.text(), self.statusRelay2.text(), self.statusRelay3.text()]
@@ -276,4 +275,7 @@ class KFI_GUI(QMainWindow):
     # def update_volts_boxes(self, volts_list):
     #     self.amps_box_relay1.setText("{}".format(volts_list[1]))
     #     self.amps_box_relay3.setText("{}".format(volts_list[3]))
-            
+    
+    def throw_logic_exception(self, error):
+        QMessageBox.information('Error', error)
+             
