@@ -98,7 +98,7 @@ class KFI_GUI(QMainWindow):
         
         try:
             self.controller.submit_bool_logic(self.boolInput.toPlainText())
-        except Exception as e:
+        except RuntimeError as e:
             print(f"\n\nKFI_GUI: Exception[ERROR] Exception in submit_bool_logic: {e}\n\n")
         open_vals = [self.openRelay1.text(),self.openRelay2.text(), self.openRelay3.text()]
         close_vals =  [self.closeRelay1.text(),self.closeRelay2.text(), self.closeRelay3.text()]

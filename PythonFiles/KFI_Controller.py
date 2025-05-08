@@ -102,7 +102,7 @@ class KFI_Controller:
         temp = ""
         try:
             temp = self.logic.evaluate_logic_code(expression)
-        except Exception as e:
+        except RuntimeError as e:
             print("\n\nKFI_Controller: INVALID BOOLEAN COMMAND FOUND\n\n")
             raise e
         print(temp)
