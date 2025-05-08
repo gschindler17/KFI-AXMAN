@@ -123,55 +123,61 @@ class KFI_Logic:
         
 
     def evaluate_logic_code(self, code_str):
-
         inputs = self.input_pin_states
         outputs = self.output_pin_states
 
         new_outputs = outputs.copy()
-        lines = [line.strip() for line in code_str.strip().split(';') if line.strip()]
 
-        for line in lines:
-            if '=' not in line:
-                continue
+        try:
+            
+            lines = [line.strip() for line in code_str.strip().split(';') if line.strip()]
 
-            lhs, rhs = line.split('=')
-            output_index = int(lhs.strip()) - 13  # 13–24 maps to 0–11
+            for line in lines:
+                if '=' not in line:
+                    continue
 
-            original_expression = rhs.strip()
-            expression = original_expression
+                lhs, rhs = line.split('=')
+                output_index = int(lhs.strip()) - 13  # 13–24 maps to 0–11
 
-            # Replace T and F with True and False
-            expression = re.sub(r'\bT\b', 'True', expression)
-            expression = re.sub(r'\bF\b', 'False', expression)
+                original_expression = rhs.strip()
+                expression = original_expression
 
-            # Replace NOT (!) with Python's `not`
-            expression = re.sub(r'!', 'not ', expression)
+                # Replace T and F with True and False
+                expression = re.sub(r'\bT\b', 'True', expression)
+                expression = re.sub(r'\bF\b', 'False', expression)
 
-            # Replace logical operators: * → and, + → or
-            expression = expression.replace('*', ' and ')
-            expression = expression.replace('+', ' or ')
+                # Replace NOT (!) with Python's `not`
+                expression = re.sub(r'!', 'not ', expression)
 
-            # Replace pin numbers 1–24 with appropriate references
-            def replace_pin_refs(match):
-                num = int(match.group())
-                if 1 <= num <= 12:
-                    return f"inputs[{num - 1}]"
-                elif 13 <= num <= 24:
-                    return f"new_outputs[{num - 13}]"
-                return match.group()
+                # Replace logical operators: * → and, + → or
+                expression = expression.replace('*', ' and ')
+                expression = expression.replace('+', ' or ')
 
-            expression = re.sub(r'\b([1-9]|1[0-9]|2[0-4])\b', replace_pin_refs, expression)
+                # Replace pin numbers 1–24 with appropriate references
+                def replace_pin_refs(match):
+                    num = int(match.group())
+                    if 1 <= num <= 12:
+                        return f"inputs[{num - 1}]"
+                    elif 13 <= num <= 24:
+                        return f"new_outputs[{num - 13}]"
+                    return match.group()
 
-            try:
-                result = bool(eval(expression, {'inputs': inputs, 'new_outputs': new_outputs}))
-                new_outputs[output_index] = result
+                expression = re.sub(r'\b([1-9]|1[0-9]|2[0-4])\b', replace_pin_refs, expression)
 
-            except Exception as e:
-                print(f"[ERROR] Failed to evaluate line '{line}': {e}")
+                try:
+                    result = bool(eval(expression, {'inputs': inputs, 'new_outputs': new_outputs}))
+                    new_outputs[output_index] = result
 
-        self.output_pin_states = new_outputs
+                except Exception as e:
+                    print(f"[ERROR] Failed to evaluate line '{line}': {e}")
 
-        return new_outputs
+            self.output_pin_states = new_outputs
+
+        except Exception as e:
+            print("\n\nKFI_Logic: INVALID BOOLEAN COMMAND FOUND\n\n")
+            raise RuntimeError("KFI_Logic: Raised runtime exception for invalid boolean expression")
+
+        return new_outputs 
 
     def get_breaker_feedback(self, breaker, feedback):
         feedback_vals = []
