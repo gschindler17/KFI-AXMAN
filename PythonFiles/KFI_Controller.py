@@ -125,7 +125,7 @@ class KFI_Controller:
             self.submit_bool_logic(self.bool_logic + self.breaker_command_string)
         except Exception as e:
             print("\n\nKFI_Controller: EXCEPTION FOUND IN pass_breaker_vals\n\n")
-            self.gui.throw_logic_exception("KFI_Controller: EXCEPTION FOUND IN pass_breaker_vals")
+            self.gui.throw_logic_exception("Input Logic: Invalid boolean logic")
         self.feedback = feedback
         self.breaker = breaker
         self.update_breaker_feedback(self.breaker, self.feedback)
